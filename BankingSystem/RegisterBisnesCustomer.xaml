@@ -1,0 +1,45 @@
+﻿<Window x:Class="BankingSystem.RegisterBisnesCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankingSystem"
+     
+        Title="Konto Biznesowe" Height="532" Width="432"
+        MinHeight="532"
+        MinWidth="432"
+        MaxHeight="532"
+        MaxWidth="432">
+    <Grid>
+
+
+        <StackPanel  Margin="10,0,0,0" HorizontalAlignment="Left" Width="404" Height="407" VerticalAlignment="Top">
+            <TextBlock Name="NameBlock"  Text="Nazwa Firmy" />
+            <TextBox Name="NameBox"/>
+
+           
+
+            <TextBlock Name="NipBlock" Text="Nip"/>
+            <TextBox Name="NipBox"/>
+            <TextBlock Name="EmailBlock" Text="Email"/>
+            <TextBox Name="EmailBox"/>
+            <TextBlock Name="PhoneBlock" Text="Nr Telefonu"/>
+            <TextBox Name="PhoneBox"/>
+            <TextBlock Name="DobBox" Text="Data założenia firmy"/>
+            <DatePicker Name="DoR"/>
+            <TextBlock Name="StretBlock" Text="Ulica"/>
+            <TextBox Name="StreetBox" />
+            <TextBlock Name="CityBlock" Text="Miasto"/>
+            <TextBox Name="CityBox"/>
+            <TextBlock Name="CountryBlock" Text="Kraj"/>
+            <TextBox Name="CountryBox"/>
+            <TextBlock Name="ZipCodeBlock" Text="Kod pocztowy"/>
+            <TextBox Name="ZipCodeBox"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,407,0,0" Height="84" VerticalAlignment="Top">
+            <Button Name="Create" Content="Stwórz Konto" Margin="40,0,0,53" HorizontalAlignment="Center"  Height="30" Width="110"/>
+            <Button x:Name="Back" Content="Anuluj" Margin="5,0,0,53" Width="110" Height="30" Click="Back_Click" />
+            <Button Name="Reset" Content="Wyczyść" Margin="5,0,0,53"  Width="110"  Height="30" Click="Reset_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

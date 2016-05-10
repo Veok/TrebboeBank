@@ -1,0 +1,50 @@
+﻿<Window x:Class="BankingSystem.RegisterPersonalCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankingSystem"
+        mc:Ignorable="d"
+        Title="Konto osobiste" Height="532" Width="432"
+        MinHeight="532"
+        MinWidth="432"
+        MaxHeight="532"
+        MaxWidth="432">
+    <Grid>
+
+
+        <StackPanel  Margin="10,0,0,0" HorizontalAlignment="Left" Width="404" Height="407" VerticalAlignment="Top">
+            <TextBlock Name="FirsNameBlock"  Text="Imię" />
+            <TextBox Name="FirstNameBox"/>
+
+            <TextBlock Name="LastNameBlock" Text="Nazwisko"/>
+            <TextBox Name="LastNameBox"/>
+
+
+            <TextBlock Name="GenderBlock" Text="Płeć"/>
+            <ComboBox Name="GenderComboBox"/>
+            <StackPanel Orientation="Horizontal"/>
+            <TextBlock Name="PeselBlock" Text="Pesel"/>
+            <TextBox Name="PeselBox"/>
+            <TextBlock Name="EmailBlock" Text="Email"/>
+            <TextBox Name="EmailBox"/>
+            <TextBlock Name="PhoneBlock" Text="Nr Telefonu"/>
+            <TextBox Name="PhoneBox"/>
+            <TextBlock Name="DobBox" Text="Data urodzenia"/>
+            <DatePicker Name="DoB"/>
+            <TextBlock Name="StretBlock" Text="Ulica"/>
+            <TextBox Name="StreetBox" />
+            <TextBlock Name="CityBlock" Text="Miasto"/>
+            <TextBox Name="CityBox"/>
+            <TextBlock Name="CountryBlock" Text="Kraj"/>
+            <TextBox Name="CountryBox"/>
+            <TextBlock Name="ZipCodeBlock" Text="Kod pocztowy"/>
+            <TextBox Name="ZipCodeBox"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,407,0,0" Height="84" VerticalAlignment="Top">
+            <Button Name="Create" Content="Stwórz Konto" Margin="40,0,0,53" HorizontalAlignment="Center"  Height="30" Width="110" Click="Create_Click"/>
+            <Button x:Name="Back" Content="Anuluj" Margin="5,0,0,53" Width="110" Height="30" Click="Back_Click" />
+            <Button Name="Reset" Content="Wyczyść" Margin="5,0,0,53"  Width="110"  Height="30" Click="Reset_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
