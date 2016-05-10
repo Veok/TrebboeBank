@@ -13,38 +13,39 @@
     <Grid>
 
 
-        <StackPanel  Margin="10,0,0,0" HorizontalAlignment="Left" Width="404" Height="407" VerticalAlignment="Top">
-            <TextBlock Name="FirsNameBlock"  Text="Imię" />
-            <TextBox Name="FirstNameBox"/>
+        <StackPanel Margin="10,0,0,0" HorizontalAlignment="Left" Width="404" Height="407" VerticalAlignment="Top">
+            <TextBlock Name="FirsNameBlock" Text="Imię" />
+            <TextBox Name="FirstNameBox" />
 
-            <TextBlock Name="LastNameBlock" Text="Nazwisko"/>
-            <TextBox Name="LastNameBox"/>
+            <TextBlock Name="LastNameBlock" Text="Nazwisko" />
+            <TextBox Name="LastNameBox" />
 
 
-            <TextBlock Name="GenderBlock" Text="Płeć"/>
-            <ComboBox Name="GenderComboBox"/>
-            <StackPanel Orientation="Horizontal"/>
-            <TextBlock Name="PeselBlock" Text="Pesel"/>
-            <TextBox Name="PeselBox"/>
-            <TextBlock Name="EmailBlock" Text="Email"/>
-            <TextBox Name="EmailBox"/>
-            <TextBlock Name="PhoneBlock" Text="Nr Telefonu"/>
-            <TextBox Name="PhoneBox"/>
-            <TextBlock Name="DobBox" Text="Data urodzenia"/>
-            <DatePicker Name="DoB"/>
-            <TextBlock Name="StretBlock" Text="Ulica"/>
+            <TextBlock Name="GenderBlock" Text="Płeć" />
+            <ComboBox Name="GenderComboBox" />
+            <StackPanel Orientation="Horizontal" />
+            <TextBlock Name="PeselBlock" Text="Pesel" />
+            <TextBox Name="PeselBox" />
+            <TextBlock Name="EmailBlock" Text="Email" />
+            <TextBox Name="EmailBox" />
+            <TextBlock Name="PhoneBlock" Text="Nr Telefonu" />
+            <TextBox Name="PhoneBox" />
+            <TextBlock Name="DobBox" Text="Data urodzenia" />
+            <DatePicker Name="DoB" />
+            <TextBlock Name="StretBlock" Text="Ulica" />
             <TextBox Name="StreetBox" />
-            <TextBlock Name="CityBlock" Text="Miasto"/>
-            <TextBox Name="CityBox"/>
-            <TextBlock Name="CountryBlock" Text="Kraj"/>
-            <TextBox Name="CountryBox"/>
-            <TextBlock Name="ZipCodeBlock" Text="Kod pocztowy"/>
-            <TextBox Name="ZipCodeBox"/>
+            <TextBlock Name="CityBlock" Text="Miasto" />
+            <TextBox Name="CityBox" />
+            <TextBlock Name="CountryBlock" Text="Kraj" />
+            <TextBox Name="CountryBox" />
+            <TextBlock Name="ZipCodeBlock" Text="Kod pocztowy" />
+            <TextBox Name="ZipCodeBox" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,407,0,0" Height="84" VerticalAlignment="Top">
-            <Button Name="Create" Content="Stwórz Konto" Margin="40,0,0,53" HorizontalAlignment="Center"  Height="30" Width="110" Click="Create_Click"/>
+            <Button Name="Create" Content="Stwórz Konto" Margin="40,0,0,53" HorizontalAlignment="Center" Height="30"
+                    Width="110" Click="Create_Click" />
             <Button x:Name="Back" Content="Anuluj" Margin="5,0,0,53" Width="110" Height="30" Click="Back_Click" />
-            <Button Name="Reset" Content="Wyczyść" Margin="5,0,0,53"  Width="110"  Height="30" Click="Reset_Click"/>
+            <Button Name="Reset" Content="Wyczyść" Margin="5,0,0,53" Width="110" Height="30" Click="Reset_Click" />
         </StackPanel>
     </Grid>
 </Window>

@@ -12,26 +12,31 @@
         MaxWidth="1000">
 
     <Grid>
-        <Grid Row="1" Width="1000" Height="50" VerticalAlignment="Top"/>
+        <Grid Row="1" Width="1000" Height="50" VerticalAlignment="Top" />
         <Grid Column="1" Width="795" HorizontalAlignment="LEFT" Height="600" VerticalAlignment="Bottom">
-        <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}" SelectionChanged="ListView1_SelectionChanged" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding FirstName}"/>
-                    <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding LastName}"/>
-                    <GridViewColumn Header="Data Urodzenia" DisplayMemberBinding="{Binding DateOfBirth}"/>
-                    <GridViewColumn Header="Płeć" DisplayMemberBinding="{Binding Gender1}"/>
-                    <GridViewColumn Header="Pesel" DisplayMemberBinding="{Binding Pesel}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}"
+                      SelectionChanged="ListView1_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding FirstName}" />
+                        <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding LastName}" />
+                        <GridViewColumn Header="Data Urodzenia" DisplayMemberBinding="{Binding DateOfBirth}" />
+                        <GridViewColumn Header="Płeć" DisplayMemberBinding="{Binding Gender1}" />
+                        <GridViewColumn Header="Pesel" DisplayMemberBinding="{Binding Pesel}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
         <Grid Column="2" Width="195" HorizontalAlignment="Right" Height="600" VerticalAlignment="Bottom">
-            <Button x:Name="Info" Content="Informacje o kliencie" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="190" Margin="5,0,0,0"/>
-            <Button x:Name="CreateAccount" Content="Stwórz nowe konto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50" Margin="5,51,0,0" Click="CreateAccount_Click"/>
-            <Button x:Name="DeleteAccount" Content="Usuń konto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
-                    Margin="5,102,0,0"/>
-            <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50" Margin="5,153,0,0" Click="Refresh_Click"/>
+            <Button x:Name="Info" Content="Informacje o kliencie" HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Height="50" Width="190" Margin="5,0,0,0" />
+            <Button x:Name="CreateAccount" Content="Stwórz nowe konto" HorizontalAlignment="Center"
+                    VerticalAlignment="Top" Width="190" Height="50" Margin="5,51,0,0" Click="CreateAccount_Click" />
+            <Button x:Name="DeleteAccount" Content="Usuń konto" HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Width="190" Height="50"
+                    Margin="5,102,0,0" />
+            <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190"
+                    Height="50" Margin="5,153,0,0" Click="Refresh_Click" />
         </Grid>
 
 

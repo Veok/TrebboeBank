@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace BankingSystem
 {
     /// <summary>
-    /// Interaction logic for RegisterBisnesCustomer.xaml
+    ///     Interaction logic for RegisterBisnesCustomer.xaml
     /// </summary>
     public partial class RegisterBisnesCustomer : Window
     {
@@ -26,23 +14,21 @@ namespace BankingSystem
 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
-
-
-            this.NameBox.Text = "";
-            this.NipBox.Text = "";
-            this.EmailBox.Text = "";
-            this.DoR.Text = "";
-            this.StreetBox.Text = "";
-            this.CityBox.Text = "";
-            this.CountryBox.Text = "";
-            this.ZipCodeBox.Text = "";
+            NameBox.Text = "";
+            NipBox.Text = "";
+            EmailBox.Text = "";
+            DoR.Text = "";
+            StreetBox.Text = "";
+            CityBox.Text = "";
+            CountryBox.Text = "";
+            ZipCodeBox.Text = "";
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             var Main = new MainWindow();
             Main.Show();
-            this.Close();
+            Close();
         }
     }
 }
