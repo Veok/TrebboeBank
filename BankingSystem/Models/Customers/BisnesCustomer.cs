@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BankingSystem.Customers
+namespace BankingSystem.Models.Customers
 {
     internal class BisnesCustomer : Customer
     {

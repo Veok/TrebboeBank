@@ -18,6 +18,7 @@
                       SelectionChanged="ListView1_SelectionChanged">
                 <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="ID Konta" DisplayMemberBinding="{Binding BankAccount.AccountId.Id}"/>
                         <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding FirstName}" />
                         <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding LastName}" />
                         <GridViewColumn Header="Data Urodzenia" DisplayMemberBinding="{Binding DateOfBirth}" />

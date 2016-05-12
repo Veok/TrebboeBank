@@ -3,7 +3,8 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
-using BankingSystem.Customers;
+using BankingSystem.Models;
+using BankingSystem.Models.Customers;
 
 namespace BankingSystem
 {
@@ -57,9 +58,9 @@ namespace BankingSystem
 
             var Pesel1 = Convert2Long(Pesel);
             var gender = (Gender) Enum.Parse(typeof (Gender), GenderComboBox.Text);
-
+          BankAccount account = new BankAccount();
             var personalCustomer = new PersonalCustomer(FirstName, LastName, DoB, gender, Pesel1, Email, Street, ZipCode,
-                Country, Phone, City);
+                Country, Phone, City, account);
             //PersonalCustomers.Add(personalCustomer);
 
             var filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";

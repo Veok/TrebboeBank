@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
-using BankingSystem.Customers;
+using BankingSystem.Models.Customers;
 
 namespace BankingSystem
 {

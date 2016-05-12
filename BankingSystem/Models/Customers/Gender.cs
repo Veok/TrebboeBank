@@ -1,4 +1,4 @@
-﻿namespace BankingSystem.Customers
+﻿namespace BankingSystem.Models.Customers
 {
     public enum Gender
     {
