@@ -14,7 +14,7 @@
     <Grid>
         <Grid Row="1" Width="1000" Height="50" VerticalAlignment="Top" />
         <Grid Column="1" Width="795" HorizontalAlignment="LEFT" Height="600" VerticalAlignment="Bottom">
-            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}"
+            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}" 
                       SelectionChanged="ListView1_SelectionChanged">
                 <ListView.View>
                     <GridView>
@@ -30,7 +30,7 @@
         </Grid>
         <Grid Column="2" Width="195" HorizontalAlignment="Right" Height="600" VerticalAlignment="Bottom">
             <Button x:Name="Info" Content="Informacje o kliencie" HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Height="50" Width="190" Margin="5,0,0,0" />
+                    Height="50" Width="190" Margin="5,0,0,0" Click="Info_Click" />
             <Button x:Name="CreateAccount" Content="Stwórz nowe konto" HorizontalAlignment="Center"
                     VerticalAlignment="Top" Width="190" Height="50" Margin="5,51,0,0" Click="CreateAccount_Click" />
             <Button x:Name="DeleteAccount" Content="Usuń konto" HorizontalAlignment="Center" VerticalAlignment="Top"

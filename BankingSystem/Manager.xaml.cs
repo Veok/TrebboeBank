@@ -61,5 +61,15 @@ namespace BankingSystem
             tmp.PersonalCustomers.Clear();
             XmlFiletoList(filePath);
         }
+
+        private void Info_Click(object sender, RoutedEventArgs e)
+        {
+            PersonalCustomer personalCustomer = (PersonalCustomer) ListView1.SelectedItem;
+            var Info = new ShowingInfo();
+            Info.DataContext = personalCustomer;
+            Info.Show();
+            
+             //Info.Content = personalCustomer;
+        }
     }
 }

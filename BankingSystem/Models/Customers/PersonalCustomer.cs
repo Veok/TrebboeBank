@@ -1,4 +1,5 @@
-﻿using BankingSystem.Models.Generators;
+﻿using System.Windows.Controls;
+using BankingSystem.Models.Generators;
 
 namespace BankingSystem.Models.Customers
 {
@@ -41,5 +42,7 @@ namespace BankingSystem.Models.Customers
         public string DateOfBirth { get; set; }
         public Gender Gender1 { get; set; }
         public long Pesel { get; set; }
+
+   
     }
 }
