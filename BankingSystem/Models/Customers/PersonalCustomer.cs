@@ -28,7 +28,7 @@ namespace BankingSystem.Models.Customers
             BankAccount = bankAccount;
             bankAccount.AccountId = new AccountIdGenerator();
             bankAccount.AccountId.IdGenerator();
-            bankAccount.Balance = 0;
+           
             bankAccount.Nrb = new NrbGenerator();
             bankAccount.Nrb.GenerateNrb();
 

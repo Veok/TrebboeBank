@@ -61,6 +61,7 @@ namespace BankingSystem
           BankAccount account = new BankAccount();
             var personalCustomer = new PersonalCustomer(FirstName, LastName, DoB, gender, Pesel1, Email, Street, ZipCode,
                 Country, Phone, City, account);
+            personalCustomer.BankAccount.Balance = 0.0;
             //PersonalCustomers.Add(personalCustomer);
 
             var filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";

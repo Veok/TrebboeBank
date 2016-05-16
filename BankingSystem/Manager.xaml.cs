@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
 using BankingSystem.Models.Customers;
+using BankingSystem.Models.Operations;
 
 namespace BankingSystem
 {
@@ -62,14 +63,11 @@ namespace BankingSystem
             XmlFiletoList(filePath);
         }
 
-        private void Info_Click(object sender, RoutedEventArgs e)
+   
+
+        private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {
-            PersonalCustomer personalCustomer = (PersonalCustomer) ListView1.SelectedItem;
-            var Info = new ShowingInfo();
-            Info.DataContext = personalCustomer;
-            Info.Show();
-            
-             //Info.Content = personalCustomer;
+           
         }
     }
 }

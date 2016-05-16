@@ -1,17 +1,19 @@
-﻿namespace BankingSystem.Models.Operations
+﻿using BankingSystem.Models.Customers;
+
+namespace BankingSystem.Models.Operations
 {
     internal class Withdraw : ICanSendCash
     {
         public double Amount { get; set; }
 
-        public bool CanSendCash(BankAccount bankAccount)
+        public bool CanSendCash(PersonalCustomer personalCustomer)
         {
-            return bankAccount.Balance - Amount >= 0;
+            return personalCustomer.BankAccount.Balance - Amount >= 0;
         }
 
-        public double SendCach(BankAccount bankAccount)
+        public void SendCach(PersonalCustomer personalCustomer, double amount1)
         {
-            return bankAccount.Balance - Amount;
+             personalCustomer.BankAccount.Balance =- Amount;
         }
     }
 }

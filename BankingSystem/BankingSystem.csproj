@@ -87,9 +87,6 @@
     <Compile Include="RegisterPersonalCustomer.xaml.cs">
       <DependentUpon>RegisterPersonalCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShowingInfo.xaml.cs">
-      <DependentUpon>ShowingInfo.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,10 +112,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegisterPersonalCustomer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ShowingInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
