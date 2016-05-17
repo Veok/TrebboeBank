@@ -14,7 +14,7 @@ namespace BankingSystem
         {
             InitializeComponent();
             PersonalAccounts = new ObservableCollection<PersonalAccount>();
-            GenderComboBox.ItemsSource = Enum.GetValues(typeof (Gender));
+            GenderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
             GenderComboBox.SelectedIndex = 0;
         }
 
@@ -52,21 +52,21 @@ namespace BankingSystem
             var phone = PhoneBox.Text;
 
             var pesel1 = Convert2Long(pesel);
-            var gender = (Gender) Enum.Parse(typeof (Gender), GenderComboBox.Text);
+            var gender = (Gender)Enum.Parse(typeof(Gender), GenderComboBox.Text);
             var account = new BankAccount();
             var personalAccount = new PersonalAccount(firstName, lastName, doB, gender, pesel1, email, street, zipCode,
                 country, phone, city, account);
             personalAccount.BankAccount.Balance = 0.0;
 
 
-            var filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";
+            var filePath = Environment.CurrentDirectory + @"\" + "Personal_Accounts.xml";
             ListToXmlFile(personalAccount, filePath);
             Close();
         }
 
         private void ListToXmlFile(PersonalAccount obj, string filePath)
         {
-            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
+            var xmlser = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
             ObservableCollection<PersonalAccount> list;
             try
             {

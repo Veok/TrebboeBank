@@ -12,7 +12,7 @@ namespace BankingSystem.Models.Operations
         public double SendCach(PersonalAccount personalAccount, double amount)
         {
             return personalAccount.BankAccount.Balance = personalAccount.BankAccount.Balance + amount;
-            //return cash;
+
         }
     }
 }

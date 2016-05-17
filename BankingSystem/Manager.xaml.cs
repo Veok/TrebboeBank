@@ -11,16 +11,16 @@ namespace BankingSystem
 {
     public partial class Manager
     {
-        private readonly string _filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";
-        private readonly RegisterPersonalAccount tmp = new RegisterPersonalAccount();
+        private  string filePath = Environment.CurrentDirectory + @"\" + "Personal_Accounts.xml";
+        private readonly RegisterPersonalAccount _tmp = new RegisterPersonalAccount();
 
 
         public Manager()
         {
             InitializeComponent();
 
-            DataContext = tmp;
-            XmlFiletoList(_filePath);
+            DataContext = _tmp;
+            XmlFiletoList(filePath);
         }
 
         private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,12 +33,12 @@ namespace BankingSystem
             {
                 using (var sr = new StreamReader(filePath))
                 {
-                    var deserializer = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
+                    var deserializer = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
                     var tmpList =
-                        (ObservableCollection<PersonalAccount>) deserializer.Deserialize(sr);
+                        (ObservableCollection<PersonalAccount>)deserializer.Deserialize(sr);
                     foreach (var item in tmpList)
                     {
-                        tmp.PersonalAccounts.Add(item);
+                        _tmp.PersonalAccounts.Add(item);
                     }
                 }
             }
@@ -56,17 +56,16 @@ namespace BankingSystem
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            tmp.PersonalAccounts.Clear();
-            XmlFiletoList(_filePath);
+            _tmp.PersonalAccounts.Clear();
+            XmlFiletoList(filePath);
         }
 
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {
             var personalAccount1 = ListView1.SelectedIndex;
-            var filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";
             DeleteRecord(personalAccount1, filePath);
-            tmp.PersonalAccounts.Clear();
+            _tmp.PersonalAccounts.Clear();
             XmlFiletoList(filePath);
         }
 
@@ -77,7 +76,7 @@ namespace BankingSystem
 
         private void DeleteRecord(int obj, string filePath)
         {
-            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
+            var xmlser = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
             ObservableCollection<PersonalAccount> list;
             try
             {
@@ -90,9 +89,16 @@ namespace BankingSystem
             {
                 list = new ObservableCollection<PersonalAccount>();
             }
-            if (list != null)
+            
             {
-                list.RemoveAt(obj);
+                try
+                {
+                    list.RemoveAt(obj);
+                }
+                catch
+                {
+                    MessageBox.Show("Brak klientów w bazie");
+                }
                 using (Stream s = File.Create(filePath))
                 {
                     xmlser.Serialize(s, list);
@@ -102,7 +108,7 @@ namespace BankingSystem
 
         private void Income_Click(object sender, RoutedEventArgs e)
         {
-            var personalAccount = (PersonalAccount) ListView1.SelectedItem;
+            var personalAccount = (PersonalAccount)ListView1.SelectedItem;
             var personalAccount2 = ListView1.SelectedIndex;
             ICanSendCash send = new Income();
 
@@ -113,7 +119,7 @@ namespace BankingSystem
                 var cash = double.Parse(money);
                 personalAccount.Amount = cash;
                 personalAccount.ApplyIncome(send);
-                SaveBalance(_filePath, personalAccount, personalAccount2);
+                SaveBalance(filePath, personalAccount, personalAccount2);
                 Refresh_Click(null, null);
             }
             catch
@@ -126,11 +132,11 @@ namespace BankingSystem
 
 
         {
-            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
+            var xmlser = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
             ObservableCollection<PersonalAccount> list;
             try
             {
-                using (Stream s = File.OpenRead(_filePath))
+                using (Stream s = File.OpenRead(filePath))
                 {
                     list = xmlser.Deserialize(s) as ObservableCollection<PersonalAccount>;
                 }
@@ -139,7 +145,7 @@ namespace BankingSystem
             {
                 list = new ObservableCollection<PersonalAccount>();
             }
-            if (list != null)
+            if (list == null) return;
             {
                 list.RemoveAt(obj);
 
@@ -153,7 +159,7 @@ namespace BankingSystem
 
         private void Withdraw_Click(object sender, RoutedEventArgs e)
         {
-            var personalAccount = (PersonalAccount) ListView1.SelectedItem;
+            var personalAccount = (PersonalAccount)ListView1.SelectedItem;
             var personalAccount2 = ListView1.SelectedIndex;
             ICanSendCash send = new Withdraw();
 
@@ -164,7 +170,7 @@ namespace BankingSystem
                 var cash = double.Parse(money);
                 personalAccount.Amount = cash;
                 personalAccount.ApplyIncome(send);
-                SaveBalance(_filePath, personalAccount, personalAccount2);
+                SaveBalance(filePath, personalAccount, personalAccount2);
                 Refresh_Click(null, null);
             }
             catch
