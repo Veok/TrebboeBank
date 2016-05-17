@@ -1,11 +1,10 @@
-﻿using System;
-using BankingSystem.Models.Customers;
+﻿using BankingSystem.Models.Customers;
 
 namespace BankingSystem.Models.Operations
 {
     public interface ICanSendCash
     {
-        Boolean CanSendCash(PersonalCustomer personalCustomer);
+        bool CanSendCash(PersonalCustomer personalCustomer);
         double SendCach(PersonalCustomer personalCustomer, double amount);
     }
 }

@@ -8,7 +8,7 @@ namespace BankingSystem.Models.Generators
 
         public int IdGenerator()
         {
-          Random rnd = new Random();
+            var rnd = new Random();
             Id = rnd.Next(1000000, 9999999);
             return Id;
         }

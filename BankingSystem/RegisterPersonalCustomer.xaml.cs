@@ -8,10 +8,7 @@ using BankingSystem.Models.Customers;
 
 namespace BankingSystem
 {
-    /// <summary>
-    ///     Interaction logic for RegisterPersonalCustomer.xaml
-    /// </summary>
-    public partial class RegisterPersonalCustomer : Window
+    public partial class RegisterPersonalCustomer
     {
         public RegisterPersonalCustomer()
         {
@@ -38,31 +35,29 @@ namespace BankingSystem
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            var main = new MainWindow();
-            main.Show();
             Close();
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            var FirstName = FirstNameBox.Text;
-            var LastName = LastNameBox.Text;
-            var Pesel = PeselBox.Text;
-            var Email = EmailBox.Text;
-            var DoB = this.DoB.Text;
-            var Street = StreetBox.Text;
-            var City = CityBox.Text;
-            var Country = CountryBox.Text;
-            var ZipCode = ZipCodeBox.Text;
-            var Phone = PhoneBox.Text;
+            var firstName = FirstNameBox.Text;
+            var lastName = LastNameBox.Text;
+            var pesel = PeselBox.Text;
+            var email = EmailBox.Text;
+            var doB = DoB.Text;
+            var street = StreetBox.Text;
+            var city = CityBox.Text;
+            var country = CountryBox.Text;
+            var zipCode = ZipCodeBox.Text;
+            var phone = PhoneBox.Text;
 
-            var Pesel1 = Convert2Long(Pesel);
+            var pesel1 = Convert2Long(pesel);
             var gender = (Gender) Enum.Parse(typeof (Gender), GenderComboBox.Text);
-          BankAccount account = new BankAccount();
-            var personalCustomer = new PersonalCustomer(FirstName, LastName, DoB, gender, Pesel1, Email, Street, ZipCode,
-                Country, Phone, City, account);
+            var account = new BankAccount();
+            var personalCustomer = new PersonalCustomer(firstName, lastName, doB, gender, pesel1, email, street, zipCode,
+                country, phone, city, account);
             personalCustomer.BankAccount.Balance = 0.0;
-          
+
 
             var filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";
             ListToXmlFile(personalCustomer, filePath);
@@ -72,7 +67,7 @@ namespace BankingSystem
         private void ListToXmlFile(PersonalCustomer obj, string filePath)
         {
             var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalCustomer>));
-            ObservableCollection<PersonalCustomer> list = null;
+            ObservableCollection<PersonalCustomer> list;
             try
             {
                 using (Stream s = File.OpenRead(filePath))
@@ -84,7 +79,7 @@ namespace BankingSystem
             {
                 list = new ObservableCollection<PersonalCustomer>();
             }
-            list.Add(obj);
+            list?.Add(obj);
             using (Stream s = File.OpenWrite(filePath))
             {
                 xmlser.Serialize(s, list);
@@ -95,8 +90,8 @@ namespace BankingSystem
         {
             try
             {
-                var LngString = long.Parse(str1);
-                return LngString;
+                var lngString = long.Parse(str1);
+                return lngString;
             }
             catch
             {

@@ -26,8 +26,8 @@ namespace BankingSystem
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            var Main = new MainWindow();
-            Main.Show();
+            var main = new MainWindow();
+            main.Show();
             Close();
         }
     }

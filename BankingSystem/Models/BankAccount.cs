@@ -1,5 +1,4 @@
 ﻿using BankingSystem.Models.Generators;
-using BankingSystem.Models.Operations;
 
 namespace BankingSystem.Models
 {
@@ -8,10 +7,5 @@ namespace BankingSystem.Models
         public double Balance { get; set; }
         public AccountIdGenerator AccountId { get; set; }
         public NrbGenerator Nrb { get; set; }
-        
-
-        
-        
-
     }
 }

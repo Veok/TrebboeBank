@@ -15,30 +15,30 @@
         <Grid Row="1" Width="1000" Height="50" VerticalAlignment="Top" />
         <Grid Column="1" Width="795" HorizontalAlignment="LEFT" Height="600" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="229*"/>
-                <ColumnDefinition Width="238*"/>
-                <ColumnDefinition Width="328*"/>
+                <ColumnDefinition Width="229*" />
+                <ColumnDefinition Width="238*" />
+                <ColumnDefinition Width="328*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40*"/>
-                <RowDefinition Height="48*"/>
-                <RowDefinition Height="46*"/>
-                <RowDefinition Height="53*"/>
-                <RowDefinition Height="47*"/>
-                <RowDefinition Height="53*"/>
-                <RowDefinition Height="59*"/>
-                <RowDefinition Height="53*"/>
-                <RowDefinition Height="154*"/>
-                <RowDefinition Height="47*"/>
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="48*" />
+                <RowDefinition Height="46*" />
+                <RowDefinition Height="53*" />
+                <RowDefinition Height="47*" />
+                <RowDefinition Height="53*" />
+                <RowDefinition Height="59*" />
+                <RowDefinition Height="53*" />
+                <RowDefinition Height="154*" />
+                <RowDefinition Height="47*" />
             </Grid.RowDefinitions>
-            <Grid Row="0" Grid.ColumnSpan="2"  Grid.RowSpan="3" Background="LightGoldenRodYellow"/>
-            <Grid Row="3" Grid.ColumnSpan="2"  Grid.RowSpan="2" Background="Bisque" />
-            <Grid Row="5" Grid.ColumnSpan="2" Grid.RowSpan="4" Background="LightGoldenrodYellow"/>
-            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}" 
+            <Grid Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="LightGoldenRodYellow" />
+            <Grid Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Bisque" />
+            <Grid Row="5" Grid.ColumnSpan="2" Grid.RowSpan="4" Background="LightGoldenrodYellow" />
+            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}"
                       SelectionChanged="ListView1_SelectionChanged" Margin="4,0,0,0" Grid.RowSpan="10" Grid.Column="2">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="ID Konta" DisplayMemberBinding="{Binding BankAccount.AccountId.Id}"/>
+                        <GridViewColumn Header="ID Konta" DisplayMemberBinding="{Binding BankAccount.AccountId.Id}" />
                         <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding FirstName}" />
                         <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding LastName}" />
 
@@ -46,74 +46,101 @@
 
                 </ListView.View>
             </ListView>
-            <TextBlock Text="ID:" FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,11,0,10"/>
+            <TextBlock Text="ID:" FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="0"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,11,0,10" />
             <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.BankAccount.AccountId.Id}"
-                       HorizontalAlignment="Left"  FontSize="14" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"
-                      Margin="30,11,0,10" />
-            <TextBlock Text="Imię: " FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,15,0,14"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.FirstName}" Grid.Column="0" 
-                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,15,0,14" FontSize="14"/>
-            <TextBlock Text="Nazwisko:" FontSize="14" FontWeight="DemiBold"  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,15,0,14"/>
+                       HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"
+                       Margin="30,11,0,10" />
+            <TextBlock Text="Imię: " FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,15,0,14" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.FirstName}" Grid.Column="0"
+                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="50,15,0,14"
+                       FontSize="14" />
+            <TextBlock Text="Nazwisko:" FontSize="14" FontWeight="DemiBold" Grid.Column="1" Grid.Row="1"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,15,0,14" />
             <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.LastName}" Grid.Column="1"
-                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="70,15,0,14" FontSize="14"/>
-            <TextBlock Text="Płeć:" FontSize="14" FontWeight="DemiBold"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"
-                       Margin="10,14,0,13"/>
+                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="70,15,0,14"
+                       FontSize="14" />
+            <TextBlock Text="Płeć:" FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="2"
+                       HorizontalAlignment="Left" VerticalAlignment="Center"
+                       Margin="10,14,0,13" />
             <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Gender1}" FontSize="14"
                        Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"
-                       Margin="50,14,0,13"/>
-            <TextBlock Text="Data urodzenia:" FontSize="14" FontWeight="DemiBold"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"
-                       VerticalAlignment="Center" Margin="0,14,0,13"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.DateOfBirth}" HorizontalAlignment="Left" FontSize="14"
+                       Margin="50,14,0,13" />
+            <TextBlock Text="Data urodzenia:" FontSize="14" FontWeight="DemiBold" Grid.Column="1" Grid.Row="2"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" Margin="0,14,0,13" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.DateOfBirth}" HorizontalAlignment="Left"
+                       FontSize="14"
                        VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"
-                       Margin="110,14,0,13"/>
-            <TextBlock Text="Nr rachunku: " FontSize="16" FontWeight="DemiBold"  Grid.Column="0" Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Left"
-                       Margin="10,16,0,15"/>
-            <TextBlock  Text="{Binding ElementName=ListView1, Path=SelectedItem.BankAccount.Nrb.NrbNumber}" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"
-                        Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="110,16,0,15"/>
-            <TextBlock Text="Środki na koncie:" FontSize="16" FontWeight="DemiBold"  Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,13,0,12"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.BankAccount.Balance}" VerticalAlignment="Center " FontSize="16"
-                       HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Margin="130,13,0,12"/>
-            <TextBlock Text="Email:" FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,18,0,16"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Email}" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" FontSize="14"
-                       HorizontalAlignment="Left" Margin="55,18,0,16"/>
-            <TextBlock Text="Nr telefonu:" FontSize="14" FontWeight="DemiBold" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,18,0,16"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Phone}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" FontSize="14"
-                       VerticalAlignment="Center" Margin="80,18,0,16"/>
-            <TextBlock Text="Adres:" FontSize="14" FontWeight="DemiBold"  Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,12,0,22"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Street}" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left" FontSize="14"
-                       VerticalAlignment="Bottom" Margin="10,0,0,0"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.ZipCode}" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"
-                       Margin="10,0,0,0"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.City}" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"
-                       Margin="70,0,0,0"/>
-            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Country}" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"
-                       Margin="10,20,0,0"/>
+                       Margin="110,14,0,13" />
+            <TextBlock Text="Nr rachunku: " FontSize="16" FontWeight="DemiBold" Grid.Column="0" Grid.Row="3"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="10,16,0,15" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.BankAccount.Nrb.NrbNumber}"
+                       Grid.Column="0" Grid.ColumnSpan="2" FontSize="16"
+                       Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="110,16,0,15" />
+            <TextBlock Text="Środki na koncie:" FontSize="16" FontWeight="DemiBold" Grid.Column="1" Grid.Row="4"
+                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,13,0,12" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.BankAccount.Balance}"
+                       VerticalAlignment="Center " FontSize="16"
+                       HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Margin="130,13,0,12" />
+            <TextBlock Text="Email:" FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="5"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,18,0,16" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Email}" Grid.Column="0" Grid.Row="5"
+                       VerticalAlignment="Center" FontSize="14"
+                       HorizontalAlignment="Left" Margin="55,18,0,16" />
+            <TextBlock Text="Nr telefonu:" FontSize="14" FontWeight="DemiBold" Grid.Column="1" Grid.Row="5"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,18,0,16" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Phone}" Grid.Column="1" Grid.Row="5"
+                       HorizontalAlignment="Left" FontSize="14"
+                       VerticalAlignment="Center" Margin="80,18,0,16" />
+            <TextBlock Text="Adres:" FontSize="14" FontWeight="DemiBold" Grid.Column="0" Grid.Row="7"
+                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,12,0,22" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Street}" Grid.Column="0" Grid.Row="7"
+                       HorizontalAlignment="Left" FontSize="14"
+                       VerticalAlignment="Bottom" Margin="10,0,0,0" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.ZipCode}" Grid.Column="0" Grid.Row="8"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"
+                       Margin="10,0,0,0" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.City}" Grid.Column="0" Grid.Row="8"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"
+                       Margin="70,0,0,0" />
+            <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.Country}" Grid.Column="0" Grid.Row="8"
+                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14"
+                       Margin="10,20,0,0" />
 
 
-
-            <Grid Column="2" Width="195" HorizontalAlignment="Right" Height="600" VerticalAlignment="Bottom" Margin="0,0,-195,0" Grid.RowSpan="10">
+            <Grid Column="2" Width="195" HorizontalAlignment="Right" Height="600" VerticalAlignment="Bottom"
+                  Margin="0,0,-195,0" Grid.RowSpan="10">
                 <Button x:Name="CreateAccount" Content="Stwórz nowe konto" HorizontalAlignment="Center"
-                    VerticalAlignment="Top" Width="190" Height="50" Margin="3,1,0,0" Click="CreateAccount_Click" />
-                <Button x:Name="DeleteAccount" Content="Usuń konto" HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Width="190" Height="50"
-                    Margin="3,52,0,0" Click="DeleteAccount_Click" />
-                <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190"
-                    Height="50" Margin="3,103,0,0" Click="Refresh_Click" />
-                <Button x:Name="Income" Content="Dodaj środki na konto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
-                        Margin="3,224,0,0" Click="Income_Click"/>
-                <Button x:Name="Withdraw" Content="Wypłać środki z konta" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
-                        Margin="3,275,0,0"/>
-                <Button x:Name="Bussines" Content="Klienci Biznesowi" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
-                        Margin="3,346,0,0"/>
-                <Button x:Name="Quit" Content="Wyjdź" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
-                        Margin="3,397,0,0" Click="Quit_Click"/>
-                
-                <TextBlock Text="Kwota: " HorizontalAlignment="left" VerticalAlignment="Top" Margin="3,164,0,0"/>
-                <TextBox Height="25" Name="Cash" Width="190" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="3,185,0,0"/>
+                        VerticalAlignment="Top" Width="190" Height="50" Margin="3,1,0,0" Click="CreateAccount_Click" />
+                <Button x:Name="DeleteAccount" Content="Usuń konto" HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Width="190" Height="50"
+                        Margin="3,52,0,0" Click="DeleteAccount_Click" />
+                <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Center" VerticalAlignment="Top"
+                        Width="190"
+                        Height="50" Margin="3,103,0,0" Click="Refresh_Click" />
+                <Button x:Name="Income" Content="Dodaj środki na konto" HorizontalAlignment="Center"
+                        VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,224,0,0" Click="Income_Click" />
+                <Button x:Name="Withdraw" Content="Wypłać środki z konta" HorizontalAlignment="Center"
+                        VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,275,0,0" Click="Withdraw_Click" />
+                <Button x:Name="Bussines" Content="Klienci Biznesowi" HorizontalAlignment="Center"
+                        VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,346,0,0" />
+                <Button x:Name="Quit" Content="Wyjdź" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190"
+                        Height="50"
+                        Margin="3,397,0,0" Click="Quit_Click" />
+
+                <TextBlock Text="Kwota: " HorizontalAlignment="left" VerticalAlignment="Top" Margin="3,164,0,0" />
+                <TextBox Height="25" Name="Cash" Width="190" VerticalAlignment="Top" HorizontalAlignment="Center"
+                         Margin="3,185,0,0" />
             </Grid>
         </Grid>
     </Grid>
-
 
 
 </Window>

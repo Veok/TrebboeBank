@@ -1,18 +1,17 @@
-﻿using System.Windows.Controls;
-using BankingSystem.Models.Generators;
+﻿using BankingSystem.Models.Generators;
 using BankingSystem.Models.Operations;
 
 namespace BankingSystem.Models.Customers
 {
     public class PersonalCustomer : Customer
     {
-        public PersonalCustomer() 
+        public PersonalCustomer()
         {
         }
 
         public PersonalCustomer(string firstName, string lastName, string doB,
             Gender gender, long pesel, string email, string street, string zipCode, string country,
-            string phone, string city, BankAccount bankAccount) 
+            string phone, string city, BankAccount bankAccount)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -31,26 +30,22 @@ namespace BankingSystem.Models.Customers
             bankAccount.AccountId.IdGenerator();
             bankAccount.Nrb = new NrbGenerator();
             bankAccount.Nrb.GenerateNrb();
-
-
-
         }
 
-        
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }
         public Gender Gender1 { get; set; }
         public long Pesel { get; set; }
-        public double amount { get; set; }
+        public double Amount { get; set; }
 
-        public void applyIncome(ICanSendCash applyIncome)
+        public void ApplyIncome(ICanSendCash applyIncome)
         {
             if (applyIncome.CanSendCash(this))
             {
-                applyIncome.SendCach(this, amount);
+                applyIncome.SendCach(this, Amount);
             }
         }
     }
-    
 }

@@ -12,24 +12,18 @@ namespace BankingSystem
             InitializeComponent();
         }
 
-        private void RegisterNormalCustomer_Click(object sender, RoutedEventArgs e)
-        {
-            var RegisterNormal = new RegisterPersonalCustomer();
-            RegisterNormal.Show();
-            Close();
-        }
 
         private void RegisterBisnesCustomer_Click(object sender, RoutedEventArgs e)
         {
-            var RegisterBisnes = new RegisterBisnesCustomer();
-            RegisterBisnes.Show();
+            var registerBisnes = new RegisterBisnesCustomer();
+            registerBisnes.Show();
             Close();
         }
 
         private void Manager_Click(object sender, RoutedEventArgs e)
         {
-            var Manager = new Manager();
-            Manager.Show();
+            var manager = new Manager();
+            manager.Show();
             Close();
         }
     }
