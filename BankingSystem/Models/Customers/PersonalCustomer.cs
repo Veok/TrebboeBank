@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using BankingSystem.Models.Generators;
+using BankingSystem.Models.Operations;
 
 namespace BankingSystem.Models.Customers
 {
@@ -28,7 +29,6 @@ namespace BankingSystem.Models.Customers
             BankAccount = bankAccount;
             bankAccount.AccountId = new AccountIdGenerator();
             bankAccount.AccountId.IdGenerator();
-           
             bankAccount.Nrb = new NrbGenerator();
             bankAccount.Nrb.GenerateNrb();
 
@@ -42,7 +42,15 @@ namespace BankingSystem.Models.Customers
         public string DateOfBirth { get; set; }
         public Gender Gender1 { get; set; }
         public long Pesel { get; set; }
+        public double amount { get; set; }
 
-   
+        public void applyIncome(ICanSendCash applyIncome)
+        {
+            if (applyIncome.CanSendCash(this))
+            {
+                applyIncome.SendCach(this, amount);
+            }
+        }
     }
+    
 }

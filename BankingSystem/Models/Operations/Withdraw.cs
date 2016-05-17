@@ -11,9 +11,10 @@ namespace BankingSystem.Models.Operations
             return personalCustomer.BankAccount.Balance - Amount >= 0;
         }
 
-        public void SendCach(PersonalCustomer personalCustomer, double amount1)
+        public double SendCach(PersonalCustomer personalCustomer, double amount)
         {
-             personalCustomer.BankAccount.Balance =- Amount;
+            return personalCustomer.BankAccount.Balance =- Amount;
+
         }
     }
 }

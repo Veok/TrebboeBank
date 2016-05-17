@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankingSystem"
         mc:Ignorable="d"
-        Title="Manager" Height="700" Width="1000"
+        Title="Manager" Height="700" Width="1008"
         MinHeight="700"
-        MinWidth="1000"
+        MinWidth="1008"
         MaxHeight="700"
-        MaxWidth="1000">
+        MaxWidth="1008">
 
     <Grid>
         <Grid Row="1" Width="1000" Height="50" VerticalAlignment="Top" />
@@ -93,13 +93,23 @@
 
             <Grid Column="2" Width="195" HorizontalAlignment="Right" Height="600" VerticalAlignment="Bottom" Margin="0,0,-195,0" Grid.RowSpan="10">
                 <Button x:Name="CreateAccount" Content="Stwórz nowe konto" HorizontalAlignment="Center"
-                    VerticalAlignment="Top" Width="190" Height="50" Margin="5,51,0,0" Click="CreateAccount_Click" />
+                    VerticalAlignment="Top" Width="190" Height="50" Margin="3,1,0,0" Click="CreateAccount_Click" />
                 <Button x:Name="DeleteAccount" Content="Usuń konto" HorizontalAlignment="Center" VerticalAlignment="Top"
                     Width="190" Height="50"
-                    Margin="5,102,0,0" Click="DeleteAccount_Click" />
+                    Margin="3,52,0,0" Click="DeleteAccount_Click" />
                 <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190"
-                    Height="50" Margin="5,153,0,0" Click="Refresh_Click" />
-
+                    Height="50" Margin="3,103,0,0" Click="Refresh_Click" />
+                <Button x:Name="Income" Content="Dodaj środki na konto" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,224,0,0" Click="Income_Click"/>
+                <Button x:Name="Withdraw" Content="Wypłać środki z konta" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,275,0,0"/>
+                <Button x:Name="Bussines" Content="Klienci Biznesowi" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,346,0,0"/>
+                <Button x:Name="Quit" Content="Wyjdź" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190" Height="50"
+                        Margin="3,397,0,0" Click="Quit_Click"/>
+                
+                <TextBlock Text="Kwota: " HorizontalAlignment="left" VerticalAlignment="Top" Margin="3,164,0,0"/>
+                <TextBox Height="25" Name="Cash" Width="190" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="3,185,0,0"/>
             </Grid>
         </Grid>
     </Grid>

@@ -2,19 +2,18 @@
 
 namespace BankingSystem.Models.Operations
 {
-    internal class Income : ICanSendCash
+     class Income : ICanSendCash
     {
-        public double Amount { get; set; }
-
 
         public bool CanSendCash(PersonalCustomer personalCustomer)
         {
-            return personalCustomer.BankAccount.Balance >= 0;
+            return personalCustomer.amount >= 0;
         }
 
-        public void SendCach(PersonalCustomer personalCustomer, double amount1)
+        public double SendCach(PersonalCustomer personalCustomer, double amount)
         {
-             personalCustomer.BankAccount.Balance =+ amount1;
+            return personalCustomer.BankAccount.Balance = personalCustomer.BankAccount.Balance+ amount;
+            //return cash;
         }
     }
 }
