@@ -8,17 +8,17 @@ using BankingSystem.Models.Customers;
 
 namespace BankingSystem
 {
-    public partial class RegisterPersonalCustomer
+    public partial class RegisterPersonalAccount
     {
-        public RegisterPersonalCustomer()
+        public RegisterPersonalAccount()
         {
             InitializeComponent();
-            PersonalCustomers = new ObservableCollection<PersonalCustomer>();
+            PersonalAccounts = new ObservableCollection<PersonalAccount>();
             GenderComboBox.ItemsSource = Enum.GetValues(typeof (Gender));
             GenderComboBox.SelectedIndex = 0;
         }
 
-        public ObservableCollection<PersonalCustomer> PersonalCustomers { get; set; }
+        public ObservableCollection<PersonalAccount> PersonalAccounts { get; set; }
 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
@@ -54,35 +54,38 @@ namespace BankingSystem
             var pesel1 = Convert2Long(pesel);
             var gender = (Gender) Enum.Parse(typeof (Gender), GenderComboBox.Text);
             var account = new BankAccount();
-            var personalCustomer = new PersonalCustomer(firstName, lastName, doB, gender, pesel1, email, street, zipCode,
+            var personalAccount = new PersonalAccount(firstName, lastName, doB, gender, pesel1, email, street, zipCode,
                 country, phone, city, account);
-            personalCustomer.BankAccount.Balance = 0.0;
+            personalAccount.BankAccount.Balance = 0.0;
 
 
             var filePath = Environment.CurrentDirectory + @"\" + "Personal_Customers.xml";
-            ListToXmlFile(personalCustomer, filePath);
+            ListToXmlFile(personalAccount, filePath);
             Close();
         }
 
-        private void ListToXmlFile(PersonalCustomer obj, string filePath)
+        private void ListToXmlFile(PersonalAccount obj, string filePath)
         {
-            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalCustomer>));
-            ObservableCollection<PersonalCustomer> list;
+            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
+            ObservableCollection<PersonalAccount> list;
             try
             {
                 using (Stream s = File.OpenRead(filePath))
                 {
-                    list = xmlser.Deserialize(s) as ObservableCollection<PersonalCustomer>;
+                    list = xmlser.Deserialize(s) as ObservableCollection<PersonalAccount>;
                 }
             }
             catch
             {
-                list = new ObservableCollection<PersonalCustomer>();
+                list = new ObservableCollection<PersonalAccount>();
             }
-            list?.Add(obj);
-            using (Stream s = File.OpenWrite(filePath))
+            if (list != null)
             {
-                xmlser.Serialize(s, list);
+                list.Add(obj);
+                using (Stream s = File.OpenWrite(filePath))
+                {
+                    xmlser.Serialize(s, list);
+                }
             }
         }
 

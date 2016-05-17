@@ -3,13 +3,13 @@ using BankingSystem.Models.Operations;
 
 namespace BankingSystem.Models.Customers
 {
-    public class PersonalCustomer : Customer
+    public class PersonalAccount : Customer
     {
-        public PersonalCustomer()
+        public PersonalAccount()
         {
         }
 
-        public PersonalCustomer(string firstName, string lastName, string doB,
+        public PersonalAccount(string firstName, string lastName, string doB,
             Gender gender, long pesel, string email, string street, string zipCode, string country,
             string phone, string city, BankAccount bankAccount)
         {

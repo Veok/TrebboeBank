@@ -2,7 +2,7 @@
 
 namespace BankingSystem.Models.Customers
 {
-    internal class BisnesCustomer : Customer
+    internal class CompanyAccount : Customer
     {
         public string FirmName { get; set; }
         public long Nip { get; set; }

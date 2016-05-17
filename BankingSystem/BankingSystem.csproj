@@ -81,11 +81,11 @@
       <DependentUpon>Manager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Validators\NrbValidator.cs" />
-    <Compile Include="RegisterBisnesCustomer.xaml.cs">
-      <DependentUpon>RegisterBisnesCustomer.xaml</DependentUpon>
+    <Compile Include="RegisterCompanyAccount.xaml.cs">
+      <DependentUpon>RegisterCompanyAccount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegisterPersonalCustomer.xaml.cs">
-      <DependentUpon>RegisterPersonalCustomer.xaml</DependentUpon>
+    <Compile Include="RegisterPersonalAccount.xaml.cs">
+      <DependentUpon>RegisterPersonalAccount.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,10 +95,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Customers\BisnesCustomer.cs" />
+    <Compile Include="Models\Customers\CompanyAccount.cs" />
     <Compile Include="Models\Customers\Customer.cs" />
     <Compile Include="Models\Customers\Gender.cs" />
-    <Compile Include="Models\Customers\PersonalCustomer.cs" />
+    <Compile Include="Models\Customers\PersonalAccount.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -107,11 +107,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegisterBisnesCustomer.xaml">
+    <Page Include="RegisterCompanyAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegisterPersonalCustomer.xaml">
+    <Page Include="RegisterPersonalAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

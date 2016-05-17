@@ -4,7 +4,7 @@ namespace BankingSystem.Models.Operations
 {
     public interface ICanSendCash
     {
-        bool CanSendCash(PersonalCustomer personalCustomer);
-        double SendCach(PersonalCustomer personalCustomer, double amount);
+        bool CanSendCash(PersonalAccount personalAccount);
+        double SendCach(PersonalAccount personalAccount, double amount);
     }
 }

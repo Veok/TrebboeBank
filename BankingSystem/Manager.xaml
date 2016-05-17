@@ -34,7 +34,7 @@
             <Grid Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3" Background="LightGoldenRodYellow" />
             <Grid Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Bisque" />
             <Grid Row="5" Grid.ColumnSpan="2" Grid.RowSpan="4" Background="LightGoldenrodYellow" />
-            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalCustomers}"
+            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalAccount}"
                       SelectionChanged="ListView1_SelectionChanged" Margin="4,0,0,0" Grid.RowSpan="10" Grid.Column="2">
                 <ListView.View>
                     <GridView>

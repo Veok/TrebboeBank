@@ -5,7 +5,7 @@ namespace BankingSystem
     /// <summary>
     ///     Interaction logic for RegisterBisnesCustomer.xaml
     /// </summary>
-    public partial class RegisterBisnesCustomer : Window
+    public partial class RegisterBisnesCustomer
     {
         public RegisterBisnesCustomer()
         {
