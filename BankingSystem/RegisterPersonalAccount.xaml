@@ -32,7 +32,7 @@
             <TextBox Name="PhoneBox" />
             <TextBlock Name="DobBox" Text="Data urodzenia" />
             <DatePicker Name="DoB" />
-            <TextBlock Name="StretBlock" Text="Ulica" />
+            <TextBlock Name="StretBlock" Text="Ulica, nr domu oraz mieszkania" />
             <TextBox Name="StreetBox" />
             <TextBlock Name="CityBlock" Text="Miasto" />
             <TextBox Name="CityBox" />

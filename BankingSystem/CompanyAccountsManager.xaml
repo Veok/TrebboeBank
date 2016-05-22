@@ -1,15 +1,16 @@
-﻿<Window x:Class="BankingSystem.Manager"
+﻿<Window x:Class="BankingSystem.CompanyAccountsManager"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankingSystem"
         mc:Ignorable="d"
-        Title="Manager" Height="700" Width="1008"
+           Title="Manager" Height="700" Width="1008"
         MinHeight="700"
         MinWidth="1008"
         MaxHeight="700"
-        MaxWidth="1008">
+        MaxWidth="1008"
+        FontFamily="Calibri">
 
     <Grid>
         <Grid Height="50" VerticalAlignment="Top" Grid.ColumnSpan="3" />
@@ -34,7 +35,7 @@
 
             <Grid Row="0" RowSpan="5" Background="LightSlateGray" Column="1" Grid.ColumnSpan="2" Margin="5,0,400,0"/>
             <Grid Row="6" Column="1" Background="SlateGray" Grid.ColumnSpan="2" Margin="5,0,400,0.385"/>
-           
+
 
 
             <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalAccounts}"
@@ -49,20 +50,20 @@
 
                 </ListView.View>
             </ListView>
-            <TextBlock Text="ID:" FontSize="30" FontWeight="DemiBold"  Grid.Column="1" Grid.Row="0" 
+            <TextBlock Text="ID:" FontSize="30"  FontWeight="DemiBold"  Grid.Column="1" Grid.Row="0" 
                        HorizontalAlignment="Center" VerticalAlignment="Center" Margin="125,0,232,0"   />
             <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.BankAccount.AccountId.Id}"
-                       HorizontalAlignment="Center" FontSize="30" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"
+                       HorizontalAlignment="Center" FontStyle="Italic" FontSize="30" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"
                        Margin="50,0,0,0"  />
             <TextBlock Text="Imię: " FontSize="15" FontWeight="DemiBold" Grid.Column="1" Grid.Row="2"
                        HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" />
             <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.FirstName}" Grid.Column="1"
-                       Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="45,0,0,0"
+                       Grid.Row="2" VerticalAlignment="Top" FontStyle="Italic" HorizontalAlignment="Left" Margin="45,0,0,0"
                        FontSize="15"  />
             <TextBlock Text="Nazwisko:" FontSize="15" FontWeight="DemiBold" Grid.Column="1" Grid.Row="2"
                        HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,23,0,25"/>
             <TextBlock Text="{Binding ElementName=ListView1, Path=SelectedItem.LastName}" Grid.Column="1"
-                       Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,23,0,25"
+                       Grid.Row="2" VerticalAlignment="Center" FontStyle="Italic" HorizontalAlignment="Left" Margin="80,23,0,25"
                        FontSize="15"  />
             <TextBlock Text="Pesel:" FontWeight="DemiBold" FontSize="15" Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom"
                        HorizontalAlignment="Left" Margin="10,0,0,3"  />
@@ -140,9 +141,9 @@
                 <Button x:Name="Withdraw" Content="Wypłać środki z konta" HorizontalAlignment="Center"
                         VerticalAlignment="Top" Width="190" Height="50"
                         Margin="3,275,0,0" Click="Withdraw_Click" />
-                <Button x:Name="Bussines" Content="Klienci Biznesowi" HorizontalAlignment="Center"
+                <Button x:Name="Personal" Content="Klienci Prywatni" HorizontalAlignment="Center"
                         VerticalAlignment="Top" Width="190" Height="50"
-                        Margin="3,346,0,0" />
+                        Margin="3,346,0,0" Click="Personal_Click" />
                 <Button x:Name="Quit" Content="Wyjdź" HorizontalAlignment="Center" VerticalAlignment="Top" Width="190"
                         Height="50"
                         Margin="3,397,0,0" Click="Quit_Click" />
@@ -153,6 +154,5 @@
             </Grid>
         </Grid>
     </Grid>
-
 
 </Window>

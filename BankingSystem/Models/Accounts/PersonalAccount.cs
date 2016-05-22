@@ -1,7 +1,7 @@
 ﻿using BankingSystem.Models.Generators;
 using BankingSystem.Models.Operations;
 
-namespace BankingSystem.Models.Customers
+namespace BankingSystem.Models.Accounts
 {
     public class PersonalAccount : Customer
     {
@@ -10,7 +10,7 @@ namespace BankingSystem.Models.Customers
         }
 
         public PersonalAccount(string firstName, string lastName, string doB,
-            Gender gender, long pesel, string email, string street, string zipCode, string country,
+            Gender gender, string pesel, string email, string street, string zipCode, string country,
             string phone, string city, BankAccount bankAccount)
         {
             FirstName = firstName;
@@ -37,8 +37,7 @@ namespace BankingSystem.Models.Customers
         public string LastName { get; set; }
         public string DateOfBirth { get; set; }
         public Gender Gender1 { get; set; }
-        public long Pesel { get; set; }
-        public double Amount { get; set; }
+        public string Pesel { get; set; }
 
         public void ApplyIncome(ICanSendCash applyIncome)
         {

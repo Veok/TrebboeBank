@@ -4,18 +4,18 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
-using BankingSystem.Models.Customers;
+using BankingSystem.Models.Accounts;
 using BankingSystem.Models.Operations;
 
 namespace BankingSystem
 {
-    public partial class Manager
+    public partial class PersonalAccountsManager
     {
         private  string filePath = Environment.CurrentDirectory + @"\" + "Personal_Accounts.xml";
         private readonly RegisterPersonalAccount _tmp = new RegisterPersonalAccount();
 
 
-        public Manager()
+        public PersonalAccountsManager()
         {
             InitializeComponent();
 

@@ -8,11 +8,11 @@
         Title="Bank Manager" Height="350" Width="525">
     <Grid Background="Azure">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button x:Name="Manager" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Content="Konta Osobiste" Height="48" Width="185" Click="Manager_Click" />
-            <Button x:Name="RegisterBisnesCustomer" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Content="Nowe Konto Biznesowe" Height="48" Width="185" Margin="5"
-                    Click="RegisterBisnesCustomer_Click" />
+            <Button x:Name="PersonalManager" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Content="Konta Osobiste" Height="48" Width="185" Click="PersonalManager_Click" />
+            <Button x:Name="CompanyManager" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Content="Konta Firmowe" Height="48" Width="185" Margin="5"
+                    Click="CompanyManager_Click" />
         </StackPanel>
     </Grid>
 </Window>

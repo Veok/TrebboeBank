@@ -71,22 +71,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\BankAccount.cs" />
+    <Compile Include="CompanyAccountsManager.xaml.cs">
+      <DependentUpon>CompanyAccountsManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Accounts\BankAccount.cs" />
     <Compile Include="Models\Generators\AccountIdGenerator.cs" />
     <Compile Include="Models\Generators\NrbGenerator.cs" />
     <Compile Include="Models\Operations\ICanSendCash.cs" />
     <Compile Include="Models\Operations\Income.cs" />
     <Compile Include="Models\Operations\Withdraw.cs" />
-    <Compile Include="Manager.xaml.cs">
-      <DependentUpon>Manager.xaml</DependentUpon>
+    <Compile Include="PersonalAccountsManager.xaml.cs">
+      <DependentUpon>PersonalAccountsManager.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Validators\DateOfBirthValidator.cs" />
+    <Compile Include="Models\Validators\MailValidator.cs" />
+    <Compile Include="Models\Validators\NameValidator.cs" />
     <Compile Include="Models\Validators\NrbValidator.cs" />
+    <Compile Include="Models\Validators\PeselValidator.cs" />
+    <Compile Include="Models\Validators\PhoneValidator.cs" />
     <Compile Include="RegisterCompanyAccount.xaml.cs">
       <DependentUpon>RegisterCompanyAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegisterPersonalAccount.xaml.cs">
       <DependentUpon>RegisterPersonalAccount.xaml</DependentUpon>
     </Compile>
+    <Page Include="CompanyAccountsManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -95,15 +107,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Customers\CompanyAccount.cs" />
-    <Compile Include="Models\Customers\Customer.cs" />
-    <Compile Include="Models\Customers\Gender.cs" />
-    <Compile Include="Models\Customers\PersonalAccount.cs" />
+    <Compile Include="Models\Accounts\CompanyAccount.cs" />
+    <Compile Include="Models\Accounts\Customer.cs" />
+    <Compile Include="Models\Accounts\Gender.cs" />
+    <Compile Include="Models\Accounts\PersonalAccount.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Manager.xaml">
+    <Page Include="PersonalAccountsManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

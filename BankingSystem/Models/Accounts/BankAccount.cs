@@ -1,6 +1,6 @@
 ﻿using BankingSystem.Models.Generators;
 
-namespace BankingSystem.Models
+namespace BankingSystem.Models.Accounts
 {
     public class BankAccount
     {

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using BankingSystem.Models.Accounts;
 
 namespace BankingSystem
 {
@@ -13,17 +14,19 @@ namespace BankingSystem
         }
 
 
-        private void RegisterBisnesCustomer_Click(object sender, RoutedEventArgs e)
+   
+
+        private void PersonalManager_Click(object sender, RoutedEventArgs e)
         {
-            var registerBisnes = new RegisterBisnesCustomer();
-            registerBisnes.Show();
+            var personalAccounts = new PersonalAccountsManager();
+            personalAccounts.Show();
             Close();
         }
 
-        private void Manager_Click(object sender, RoutedEventArgs e)
+        private void CompanyManager_Click(object sender, RoutedEventArgs e)
         {
-            var manager = new Manager();
-            manager.Show();
+            var companuAccounts = new CompanyAccountsManager();
+            companuAccounts.Show();
             Close();
         }
     }

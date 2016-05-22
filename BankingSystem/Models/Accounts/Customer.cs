@@ -1,4 +1,4 @@
-﻿namespace BankingSystem.Models.Customers
+﻿namespace BankingSystem.Models.Accounts
 {
     public class Customer
     {
@@ -10,5 +10,7 @@
         public string Street { get; set; }
         public string Country { get; set; }
         public string ZipCode { get; set; }
+        public double Amount { get; set; }
+
     }
 }
