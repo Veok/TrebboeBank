@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Windows;
 
 namespace BankingSystem.Models.Validators
 {
@@ -7,22 +9,20 @@ namespace BankingSystem.Models.Validators
 
         public bool ValidateDoB(string dob)
         {
-            try
+
+            if (!string.IsNullOrEmpty(dob))
             {
-                string[] dateParts = dob.Split('.');
-
-
-                new
-                    DateTime(Convert.ToInt32(dateParts[2]),
-                        Convert.ToInt32(dateParts[0]),
-                        Convert.ToInt32(dateParts[1]));
+                DateTime dt =
+        DateTime.ParseExact(dob, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                DateTime today = DateTime.Now;
+                DateTime validDate = new DateTime(today.Year - 18, today.Month, today.Day);
+                TimeSpan validAge = today.Subtract(validDate);
+                TimeSpan actualAge = today.Subtract(dt);
+                TimeSpan.Compare(validAge, actualAge);
                 return true;
             }
-            catch
-            {
+            return false;
 
-                return false;
-            }
         }
     }
 }

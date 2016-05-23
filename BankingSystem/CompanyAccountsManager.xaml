@@ -38,13 +38,13 @@
 
 
 
-            <ListView Name="ListView1" ItemsSource="{Binding Path = PersonalAccounts}"
+            <ListView Name="ListView1" ItemsSource="{Binding Path = CompanyAccounts}"
                       SelectionChanged="ListView1_SelectionChanged" Margin="4,0,0,0" Grid.RowSpan="11" Grid.Column="2">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID Konta" DisplayMemberBinding="{Binding BankAccount.AccountId.Id}" />
-                        <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding FirstName}" />
-                        <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding LastName}" />
+                        <GridViewColumn Header="Nazwa Firmy" DisplayMemberBinding="{Binding FirmName}" />
+                        <GridViewColumn Header="Nip" DisplayMemberBinding="{Binding Nip}" />
 
                     </GridView>
 
