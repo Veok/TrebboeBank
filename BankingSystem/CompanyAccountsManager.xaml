@@ -13,7 +13,9 @@
         FontFamily="Calibri">
 
     <Grid>
-        <Grid Height="50" VerticalAlignment="Top" Grid.ColumnSpan="3" />
+        <Grid Height="64" VerticalAlignment="Top" >
+            <Image x:Name="image" HorizontalAlignment="Left" Height="64" Source="images/Drawing.png"  VerticalAlignment="Top" Width="1000"/>
+        </Grid>
         <Grid Height="600" VerticalAlignment="Bottom" Margin="-4,0,204,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

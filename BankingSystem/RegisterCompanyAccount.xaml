@@ -24,8 +24,6 @@
             <TextBox Name="EmailBox" />
             <TextBlock Name="PhoneBlock" Text="Nr Telefonu" />
             <TextBox Name="PhoneBox" />
-            <TextBlock Name="DobBox" Text="Data założenia firmy" />
-            <DatePicker Name="DoR" />
             <TextBlock Name="StretBlock" Text="Ulica" />
             <TextBox Name="StreetBox" />
             <TextBlock Name="CityBlock" Text="Miasto" />

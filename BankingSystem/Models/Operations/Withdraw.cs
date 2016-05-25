@@ -1,4 +1,5 @@
-﻿using BankingSystem.Models.Accounts;
+﻿using System.Windows;
+using BankingSystem.Models.Accounts;
 
 namespace BankingSystem.Models.Operations
 {
@@ -6,11 +7,12 @@ namespace BankingSystem.Models.Operations
     {
         public bool CanSendCash(Customer customer)
         {
-            return customer.BankAccount.Balance - customer.Amount >= 0;
+            return customer.BankAccount.Balance  >= customer.Amount;
         }
 
         public double SendCach(Customer customer, double amount)
         {
+            MessageBox.Show("Wypłacono zadaną kwotę");
             return customer.BankAccount.Balance = customer.BankAccount.Balance - amount;
         }
     }

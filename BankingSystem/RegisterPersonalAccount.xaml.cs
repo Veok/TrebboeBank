@@ -3,8 +3,11 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
+using BankingSystem.Models;
 using BankingSystem.Models.Accounts;
 using BankingSystem.Models.Validators;
+using D = System.Data;           // System.Data.dll  
+using C = System.Data.SqlClient; // System.Data.dll 
 
 namespace BankingSystem
 {
@@ -59,11 +62,11 @@ namespace BankingSystem
             var dobValidator = new DateOfBirthValidator();
             var phoneValidator = new PhoneValidator();
 
-            if (!nameValidator.ValidatePersonName(firstName))
+            if (!nameValidator.ValidateName(firstName))
             {
                 MessageBox.Show("Podałeś nieprawidłowę imię.");
             }
-            else if (!nameValidator.ValidatePersonName(lastName))
+            else if (!nameValidator.ValidateName(lastName))
             {
                 MessageBox.Show("Podałeś nieprawidłowe nazwisko");
             }
@@ -91,6 +94,9 @@ namespace BankingSystem
 
             else
             {
+                
+
+            
                 var gender = (Gender) Enum.Parse(typeof (Gender), GenderComboBox.Text);
                 var account = new BankAccount();
                 var personalAccount = new PersonalAccount(firstName, lastName, doB, gender, pesel, email, street,

@@ -1,4 +1,5 @@
-﻿using BankingSystem.Models.Generators;
+﻿using System.Windows;
+using BankingSystem.Models.Generators;
 using BankingSystem.Models.Operations;
 
 namespace BankingSystem.Models.Accounts
@@ -44,6 +45,10 @@ namespace BankingSystem.Models.Accounts
             if (applyIncome.CanSendCash(this))
             {
                 applyIncome.SendCach(this, Amount);
+            }
+            else
+            {
+                MessageBox.Show("Operacja nieudana");
             }
         }
     }

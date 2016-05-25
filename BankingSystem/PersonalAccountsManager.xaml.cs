@@ -18,6 +18,7 @@ namespace BankingSystem
         public PersonalAccountsManager()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
             DataContext = _tmp;
             XmlFiletoList(filePath);
@@ -117,10 +118,17 @@ namespace BankingSystem
             try
             {
                 var cash = double.Parse(money);
-                personalAccount.Amount = cash;
-                personalAccount.ApplyIncome(send);
-                SaveBalance(filePath, personalAccount, personalAccount2);
-                Refresh_Click(null, null);
+                if (cash > 0)
+                {
+                    personalAccount.Amount = cash;
+                    personalAccount.ApplyIncome(send);
+                    SaveBalance(filePath, personalAccount, personalAccount2);
+                    Refresh_Click(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowa kwota");
+                }
             }
             catch
             {
@@ -168,15 +176,29 @@ namespace BankingSystem
             try
             {
                 var cash = double.Parse(money);
-                personalAccount.Amount = cash;
-                personalAccount.ApplyIncome(send);
-                SaveBalance(filePath, personalAccount, personalAccount2);
-                Refresh_Click(null, null);
+                if (cash > 0)
+                {
+                    personalAccount.Amount = cash;
+                    personalAccount.ApplyIncome(send);
+                    SaveBalance(filePath, personalAccount, personalAccount2);
+                    Refresh_Click(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowa kwota");
+                }
             }
             catch
             {
                 MessageBox.Show("Operacja nieudana");
             }
+        }
+
+        private void Company_Click(object sender, RoutedEventArgs e)
+        {
+            var company = new CompanyAccountsManager();
+            company.Show();
+            Close();
         }
     }
 }

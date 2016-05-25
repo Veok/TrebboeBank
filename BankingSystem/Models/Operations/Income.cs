@@ -1,4 +1,5 @@
-﻿using BankingSystem.Models.Accounts;
+﻿using System.Windows;
+using BankingSystem.Models.Accounts;
 
 namespace BankingSystem.Models.Operations
 {
@@ -11,6 +12,7 @@ namespace BankingSystem.Models.Operations
 
         public double SendCach(Customer customer, double amount)
         {
+            MessageBox.Show("Wpłacono zadaną kwotę");
             return customer.BankAccount.Balance = customer.BankAccount.Balance + amount;
 
         }

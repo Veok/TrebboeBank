@@ -14,8 +14,6 @@ namespace BankingSystem
         }
 
 
-   
-
         private void PersonalManager_Click(object sender, RoutedEventArgs e)
         {
             var personalAccounts = new PersonalAccountsManager();

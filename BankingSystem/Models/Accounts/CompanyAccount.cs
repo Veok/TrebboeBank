@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using BankingSystem.Models.Generators;
 using BankingSystem.Models.Operations;
 
@@ -8,17 +9,15 @@ namespace BankingSystem.Models.Accounts
     {
         public string FirmName { get; set; }
         public string Nip { get; set; }
-        public string FirmDate { get; set; }
     
 
         public CompanyAccount() { }
 
-        public CompanyAccount(string firmName, string nip, string firmDate, string email,
+        public CompanyAccount(string firmName, string nip,  string email,
             string zipCode, string country, string phone, string city, string street, BankAccount bankAccount)
         {
             FirmName = firmName;
             Nip = nip;
-            FirmDate = firmDate;
         
             Email = email;
             Street = street;
@@ -39,6 +38,10 @@ namespace BankingSystem.Models.Accounts
             if (applyIncome.CanSendCash(this))
             {
                 applyIncome.SendCach(this, Amount);
+            }
+            else
+            {
+                MessageBox.Show("Operacja nieudana");
             }
         }
 

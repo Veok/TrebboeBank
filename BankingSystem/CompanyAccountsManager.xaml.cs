@@ -31,6 +31,8 @@ namespace BankingSystem
         public CompanyAccountsManager()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
             DataContext = _tmp;
             XmlFiletoList(filePath);
         }
@@ -90,10 +92,17 @@ namespace BankingSystem
             try
             {
                 var cash = double.Parse(money);
-                companyAccount.Amount = cash;
-                companyAccount.ApplyIncome(send);
-                SaveBalance(filePath, companyAccount, companyAccount2);
-                Refresh_Click(null, null);
+                if (cash > 0)
+                {
+                    companyAccount.Amount = cash;
+                    companyAccount.ApplyIncome(send);
+                    SaveBalance(filePath, companyAccount, companyAccount2);
+                    Refresh_Click(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowa kwota");
+                }
             }
             catch
             {
@@ -136,14 +145,22 @@ namespace BankingSystem
             ICanSendCash send = new Withdraw();
 
             var money = Cash.Text;
-
+            
             try
             {
                 var cash = double.Parse(money);
-                companyAccount.Amount = cash;
-                companyAccount.ApplyIncome(send);
-                SaveBalance(filePath, companyAccount, companyAccount2);
-                Refresh_Click(null, null);
+                if (cash > 0)
+                {
+                    companyAccount.Amount = cash;
+                    companyAccount.ApplyIncome(send);
+                    SaveBalance(filePath, companyAccount, companyAccount2);
+                    Refresh_Click(null, null);
+
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowa kwota");
+                }
             }
             catch
             {
@@ -154,7 +171,9 @@ namespace BankingSystem
 
         private void Personal_Click(object sender, RoutedEventArgs e)
         {
-
+            var personal = new PersonalAccountsManager();
+            personal.Show();
+            Close();
         }
 
         private void Quit_Click(object sender, RoutedEventArgs e)

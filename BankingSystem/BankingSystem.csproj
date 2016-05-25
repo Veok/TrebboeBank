@@ -80,6 +80,8 @@
     <Compile Include="Models\Operations\ICanSendCash.cs" />
     <Compile Include="Models\Operations\Income.cs" />
     <Compile Include="Models\Operations\Withdraw.cs" />
+    <Compile Include="Models\Validators\DateOfCompanyRegistrationValidator.cs" />
+    <Compile Include="Models\Validators\NipValidator.cs" />
     <Compile Include="PersonalAccountsManager.xaml.cs">
       <DependentUpon>PersonalAccountsManager.xaml</DependentUpon>
     </Compile>
@@ -162,7 +164,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\Drawing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Logo1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,7 +4,7 @@ namespace BankingSystem.Models.Validators
 {
     internal class NameValidator
     {
-        public bool ValidatePersonName(string name)
+        public bool ValidateName(string name)
         {
 
             if (name == null)
