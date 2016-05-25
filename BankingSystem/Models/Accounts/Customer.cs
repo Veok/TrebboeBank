@@ -1,4 +1,4 @@
-﻿namespace BankingSystem.Models.Accounts
+﻿namespace TrebboeBank.Models.Accounts
 {
     public class Customer
     {
@@ -11,6 +11,5 @@
         public string Country { get; set; }
         public string ZipCode { get; set; }
         public double Amount { get; set; }
-
     }
 }

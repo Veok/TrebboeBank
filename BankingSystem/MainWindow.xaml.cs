@@ -1,18 +1,13 @@
 ﻿using System.Windows;
-using BankingSystem.Models.Accounts;
 
-namespace BankingSystem
+namespace TrebboeBank
 {
-    /// <summary>
-    ///     Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
 

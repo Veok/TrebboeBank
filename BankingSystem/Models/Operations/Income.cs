@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using BankingSystem.Models.Accounts;
+using TrebboeBank.Models.Accounts;
 
-namespace BankingSystem.Models.Operations
+namespace TrebboeBank.Models.Operations
 {
     internal class Income : ICanSendCash
     {
@@ -14,7 +14,6 @@ namespace BankingSystem.Models.Operations
         {
             MessageBox.Show("Wpłacono zadaną kwotę");
             return customer.BankAccount.Balance = customer.BankAccount.Balance + amount;
-
         }
     }
 }

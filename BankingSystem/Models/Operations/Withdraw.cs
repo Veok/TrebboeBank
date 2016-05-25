@@ -1,13 +1,13 @@
 ﻿using System.Windows;
-using BankingSystem.Models.Accounts;
+using TrebboeBank.Models.Accounts;
 
-namespace BankingSystem.Models.Operations
+namespace TrebboeBank.Models.Operations
 {
     internal class Withdraw : ICanSendCash
     {
         public bool CanSendCash(Customer customer)
         {
-            return customer.BankAccount.Balance  >= customer.Amount;
+            return customer.BankAccount.Balance >= customer.Amount;
         }
 
         public double SendCach(Customer customer, double amount)

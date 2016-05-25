@@ -1,7 +1,7 @@
 ﻿using System;
-using BankingSystem.Models.Validators;
+using TrebboeBank.Models.Validators;
 
-namespace BankingSystem.Models.Generators
+namespace TrebboeBank.Models.Generators
 {
     public class NrbGenerator
     {

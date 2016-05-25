@@ -1,4 +1,4 @@
-﻿namespace BankingSystem.Models.Accounts
+﻿namespace TrebboeBank.Models.Accounts
 {
     public enum Gender
     {

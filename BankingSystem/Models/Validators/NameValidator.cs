@@ -1,12 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace BankingSystem.Models.Validators
+namespace TrebboeBank.Models.Validators
 {
     internal class NameValidator
     {
         public bool ValidateName(string name)
         {
-
             if (name == null)
                 return false;
 
@@ -17,10 +16,6 @@ namespace BankingSystem.Models.Validators
 
             const string regx = "^[\\p{L} .'-]+$";
             return Regex.IsMatch(name, regx);
-
-
         }
-
-
     }
 }

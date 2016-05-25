@@ -1,4 +1,4 @@
-﻿namespace BankingSystem.Models.Validators
+﻿namespace TrebboeBank.Models.Validators
 {
     internal class NrbValidator
     {

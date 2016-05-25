@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
-namespace BankingSystem.Models.Validators
+namespace TrebboeBank.Models.Validators
 {
-    class PhoneValidator
+    internal class PhoneValidator
     {
         public bool ValidatePhoneNumber(string phone)
         {

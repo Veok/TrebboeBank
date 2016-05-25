@@ -1,6 +1,6 @@
-﻿using BankingSystem.Models.Generators;
+﻿using TrebboeBank.Models.Generators;
 
-namespace BankingSystem.Models.Accounts
+namespace TrebboeBank.Models.Accounts
 {
     public class BankAccount
     {

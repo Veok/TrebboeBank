@@ -1,6 +1,6 @@
-﻿using BankingSystem.Models.Accounts;
+﻿using TrebboeBank.Models.Accounts;
 
-namespace BankingSystem.Models.Operations
+namespace TrebboeBank.Models.Operations
 {
     public interface ICanSendCash
     {

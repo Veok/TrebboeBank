@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BankingSystem.Models.Generators
+namespace TrebboeBank.Models.Generators
 {
     public class AccountIdGenerator
     {

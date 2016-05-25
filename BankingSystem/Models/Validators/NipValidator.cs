@@ -1,36 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BankingSystem.Models.Validators
+﻿namespace TrebboeBank.Models.Validators
 {
-    class NipValidator
+    internal class NipValidator
     {
         public bool ValidateNip(string nip)
         {
-            int[] weights = { 6, 5, 7, 2, 3, 4, 5, 6, 7 };
-            bool result = false;
+            int[] weights = {6, 5, 7, 2, 3, 4, 5, 6, 7};
+            var result = false;
             if (nip.Length == 10)
             {
-                int controlSum = CalculateControlSum(nip, weights);
-                int controlNum = controlSum % 11;
+                var controlSum = CalculateControlSum(nip, weights);
+                var controlNum = controlSum%11;
                 if (controlNum == 10)
                 {
                     controlNum = 0;
                 }
-                int lastDigit = int.Parse(nip[nip.Length - 1].ToString());
+                var lastDigit = int.Parse(nip[nip.Length - 1].ToString());
                 result = controlNum == lastDigit;
             }
             return result;
         }
+
         private static int CalculateControlSum(string input, int[] weights, int offset = 0)
         {
-            int controlSum = 0;
-            for (int i = 0; i < input.Length - 1; i++)
+            var controlSum = 0;
+            for (var i = 0; i < input.Length - 1; i++)
             {
-                controlSum += weights[i + offset] * int.Parse(input[i].ToString());
+                controlSum += weights[i + offset]*int.Parse(input[i].ToString());
             }
             return controlSum;
         }

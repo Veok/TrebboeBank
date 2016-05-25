@@ -4,24 +4,24 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Serialization;
-using BankingSystem.Models.Accounts;
-using BankingSystem.Models.Operations;
+using TrebboeBank.Models.Accounts;
+using TrebboeBank.Models.Operations;
 
-namespace BankingSystem
+namespace TrebboeBank
 {
     public partial class PersonalAccountsManager
     {
-        private  string filePath = Environment.CurrentDirectory + @"\" + "Personal_Accounts.xml";
-        private readonly RegisterPersonalAccount _tmp = new RegisterPersonalAccount();
+        private readonly string _filePath = Environment.CurrentDirectory + @"\" + "Personal_Accounts.xml";
+        private readonly TrebboeBank.RegisterPersonalAccount _tmp = new TrebboeBank.RegisterPersonalAccount();
 
 
         public PersonalAccountsManager()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
             DataContext = _tmp;
-            XmlFiletoList(filePath);
+            XmlFiletoList(_filePath);
         }
 
         private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -34,9 +34,9 @@ namespace BankingSystem
             {
                 using (var sr = new StreamReader(filePath))
                 {
-                    var deserializer = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
+                    var deserializer = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
                     var tmpList =
-                        (ObservableCollection<PersonalAccount>)deserializer.Deserialize(sr);
+                        (ObservableCollection<PersonalAccount>) deserializer.Deserialize(sr);
                     foreach (var item in tmpList)
                     {
                         _tmp.PersonalAccounts.Add(item);
@@ -51,23 +51,23 @@ namespace BankingSystem
 
         private void CreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            var registerNormal = new RegisterPersonalAccount();
+            var registerNormal = new TrebboeBank.RegisterPersonalAccount();
             registerNormal.Show();
         }
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
             _tmp.PersonalAccounts.Clear();
-            XmlFiletoList(filePath);
+            XmlFiletoList(_filePath);
         }
 
 
         private void DeleteAccount_Click(object sender, RoutedEventArgs e)
         {
             var personalAccount1 = ListView1.SelectedIndex;
-            DeleteRecord(personalAccount1, filePath);
+            DeleteRecord(personalAccount1, _filePath);
             _tmp.PersonalAccounts.Clear();
-            XmlFiletoList(filePath);
+            XmlFiletoList(_filePath);
         }
 
         private void Quit_Click(object sender, RoutedEventArgs e)
@@ -77,7 +77,7 @@ namespace BankingSystem
 
         private void DeleteRecord(int obj, string filePath)
         {
-            var xmlser = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
+            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
             ObservableCollection<PersonalAccount> list;
             try
             {
@@ -90,7 +90,7 @@ namespace BankingSystem
             {
                 list = new ObservableCollection<PersonalAccount>();
             }
-            
+
             {
                 try
                 {
@@ -109,7 +109,7 @@ namespace BankingSystem
 
         private void Income_Click(object sender, RoutedEventArgs e)
         {
-            var personalAccount = (PersonalAccount)ListView1.SelectedItem;
+            var personalAccount = (PersonalAccount) ListView1.SelectedItem;
             var personalAccount2 = ListView1.SelectedIndex;
             ICanSendCash send = new Income();
 
@@ -122,7 +122,7 @@ namespace BankingSystem
                 {
                     personalAccount.Amount = cash;
                     personalAccount.ApplyIncome(send);
-                    SaveBalance(filePath, personalAccount, personalAccount2);
+                    SaveBalance(_filePath, personalAccount, personalAccount2);
                     Refresh_Click(null, null);
                 }
                 else
@@ -140,11 +140,11 @@ namespace BankingSystem
 
 
         {
-            var xmlser = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
+            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
             ObservableCollection<PersonalAccount> list;
             try
             {
-                using (Stream s = File.OpenRead(filePath))
+                using (Stream s = File.OpenRead(_filePath))
                 {
                     list = xmlser.Deserialize(s) as ObservableCollection<PersonalAccount>;
                 }
@@ -167,7 +167,7 @@ namespace BankingSystem
 
         private void Withdraw_Click(object sender, RoutedEventArgs e)
         {
-            var personalAccount = (PersonalAccount)ListView1.SelectedItem;
+            var personalAccount = (PersonalAccount) ListView1.SelectedItem;
             var personalAccount2 = ListView1.SelectedIndex;
             ICanSendCash send = new Withdraw();
 
@@ -180,7 +180,7 @@ namespace BankingSystem
                 {
                     personalAccount.Amount = cash;
                     personalAccount.ApplyIncome(send);
-                    SaveBalance(filePath, personalAccount, personalAccount2);
+                    SaveBalance(_filePath, personalAccount, personalAccount2);
                     Refresh_Click(null, null);
                 }
                 else

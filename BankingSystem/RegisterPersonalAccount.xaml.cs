@@ -3,13 +3,10 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
-using BankingSystem.Models;
-using BankingSystem.Models.Accounts;
-using BankingSystem.Models.Validators;
-using D = System.Data;           // System.Data.dll  
-using C = System.Data.SqlClient; // System.Data.dll 
+using TrebboeBank.Models.Accounts;
+using TrebboeBank.Models.Validators;
 
-namespace BankingSystem
+namespace TrebboeBank
 {
     public partial class RegisterPersonalAccount
     {
@@ -17,7 +14,7 @@ namespace BankingSystem
         {
             InitializeComponent();
             PersonalAccounts = new ObservableCollection<PersonalAccount>();
-            GenderComboBox.ItemsSource = Enum.GetValues(typeof(Gender));
+            GenderComboBox.ItemsSource = Enum.GetValues(typeof (Gender));
             GenderComboBox.SelectedIndex = 0;
         }
 
@@ -70,14 +67,19 @@ namespace BankingSystem
             {
                 MessageBox.Show("Podałeś nieprawidłowe nazwisko");
             }
-            else if (!mailValidator.ValidateMail(email))
-            {
-                MessageBox.Show("Podałeś nieprawidłowy adres Email");
-            }
             else if (!peselValidator.ValidatePesel(pesel))
             {
                 MessageBox.Show("Podałeś nieprawidłowy numer PESEL");
             }
+            else if (!mailValidator.ValidateMail(email))
+            {
+                MessageBox.Show("Podałeś nieprawidłowy adres Email");
+            }
+            else if (!phoneValidator.ValidatePhoneNumber(phone))
+            {
+                MessageBox.Show("Nieprawidłowy numer telefonu");
+            }
+
             else if (!dobValidator.ValidateDoB(doB))
             {
                 MessageBox.Show("Nieprawidłowa data urodzenia");
@@ -87,21 +89,16 @@ namespace BankingSystem
             {
                 MessageBox.Show("Pole adresowe nie może być puste");
             }
-            else if (!phoneValidator.ValidatePhoneNumber(phone))
-            {
-                MessageBox.Show("Nieprawidłowy numer telefonu");
-            }
+
 
             else
             {
-                
-
-            
                 var gender = (Gender) Enum.Parse(typeof (Gender), GenderComboBox.Text);
                 var account = new BankAccount();
                 var personalAccount = new PersonalAccount(firstName, lastName, doB, gender, pesel, email, street,
                     zipCode,
-                    country, phone, city, account) {BankAccount = {Balance = 0.0}};
+                    country, phone, city, account)
+                {BankAccount = {Balance = 0.0}};
 
                 var filePath = Environment.CurrentDirectory + @"\" + "Personal_Accounts.xml";
                 ListToXmlFile(personalAccount, filePath);
@@ -111,7 +108,7 @@ namespace BankingSystem
 
         private static void ListToXmlFile(PersonalAccount obj, string filePath)
         {
-            var xmlser = new XmlSerializer(typeof(ObservableCollection<PersonalAccount>));
+            var xmlser = new XmlSerializer(typeof (ObservableCollection<PersonalAccount>));
             ObservableCollection<PersonalAccount> list;
             try
             {
@@ -133,7 +130,5 @@ namespace BankingSystem
                 }
             }
         }
-
-       
-        }
     }
+}

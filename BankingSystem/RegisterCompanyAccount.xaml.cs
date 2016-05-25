@@ -3,22 +3,19 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
-using BankingSystem.Models.Accounts;
-using BankingSystem.Models.Validators;
+using TrebboeBank.Models.Accounts;
+using TrebboeBank.Models.Validators;
 
-namespace BankingSystem
+namespace TrebboeBank
 {
-    /// <summary>
-    ///     Interaction logic for RegisterBisnesCustomer.xaml
-    /// </summary>
     public partial class RegisterCompanyAccount
     {
         public RegisterCompanyAccount()
         {
             InitializeComponent();
             CompanyAccounts = new ObservableCollection<CompanyAccount>();
-
         }
+
         public ObservableCollection<CompanyAccount> CompanyAccounts { get; set; }
 
 
@@ -66,26 +63,21 @@ namespace BankingSystem
             else if (!mailValidator.ValidateMail(email))
             {
                 MessageBox.Show("Podałeś nieprawidłowy adres Email");
-            }      
+            }
+
             else if (string.IsNullOrEmpty(street) || string.IsNullOrEmpty(zipCode) || string.IsNullOrEmpty(country)
                      || string.IsNullOrEmpty(city))
             {
                 MessageBox.Show("Pole adresowe nie może być puste");
             }
-            else if (!phoneValidator.ValidatePhoneNumber(phone))
-            {
-                MessageBox.Show("Nieprawidłowy numer telefonu");
-            }
-          
+
+
             else
             {
-
-
                 var account = new BankAccount();
-                var companyAccount = new CompanyAccount(companyName, nip,  email, zipCode, country,
+                var companyAccount = new CompanyAccount(companyName, nip, email, zipCode, country,
                     phone, city, street, account)
                 {BankAccount = {Balance = 0.0}};
-                ;
 
                 var filePath = Environment.CurrentDirectory + @"\" + "Company_Accounts.xml";
                 ListToXmlFile(companyAccount, filePath);
@@ -95,7 +87,7 @@ namespace BankingSystem
 
         private static void ListToXmlFile(CompanyAccount obj, string filePath)
         {
-            var xmlser = new XmlSerializer(typeof(ObservableCollection<CompanyAccount>));
+            var xmlser = new XmlSerializer(typeof (ObservableCollection<CompanyAccount>));
             ObservableCollection<CompanyAccount> list;
             try
             {

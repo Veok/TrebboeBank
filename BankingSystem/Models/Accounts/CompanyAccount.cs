@@ -1,24 +1,21 @@
-﻿using System;
-using System.Windows;
-using BankingSystem.Models.Generators;
-using BankingSystem.Models.Operations;
+﻿using System.Windows;
+using TrebboeBank.Models.Generators;
+using TrebboeBank.Models.Operations;
 
-namespace BankingSystem.Models.Accounts
+namespace TrebboeBank.Models.Accounts
 {
     public class CompanyAccount : Customer
     {
-        public string FirmName { get; set; }
-        public string Nip { get; set; }
-    
+        public CompanyAccount()
+        {
+        }
 
-        public CompanyAccount() { }
-
-        public CompanyAccount(string firmName, string nip,  string email,
+        public CompanyAccount(string firmName, string nip, string email,
             string zipCode, string country, string phone, string city, string street, BankAccount bankAccount)
         {
             FirmName = firmName;
             Nip = nip;
-        
+
             Email = email;
             Street = street;
             ZipCode = zipCode;
@@ -33,6 +30,9 @@ namespace BankingSystem.Models.Accounts
             bankAccount.Nrb.GenerateNrb();
         }
 
+        public string FirmName { get; set; }
+        public string Nip { get; set; }
+
         public void ApplyIncome(ICanSendCash applyIncome)
         {
             if (applyIncome.CanSendCash(this))
@@ -44,6 +44,5 @@ namespace BankingSystem.Models.Accounts
                 MessageBox.Show("Operacja nieudana");
             }
         }
-
     }
 }

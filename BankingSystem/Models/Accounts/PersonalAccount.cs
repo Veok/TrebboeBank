@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using BankingSystem.Models.Generators;
-using BankingSystem.Models.Operations;
+using TrebboeBank.Models.Generators;
+using TrebboeBank.Models.Operations;
 
-namespace BankingSystem.Models.Accounts
+namespace TrebboeBank.Models.Accounts
 {
     public class PersonalAccount : Customer
     {

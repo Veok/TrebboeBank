@@ -1,29 +1,24 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows;
 
-namespace BankingSystem.Models.Validators
+namespace TrebboeBank.Models.Validators
 {
-    class DateOfBirthValidator
+    internal class DateOfBirthValidator
     {
-
         public bool ValidateDoB(string dob)
         {
-
             if (!string.IsNullOrEmpty(dob))
             {
-                DateTime dt =
-        DateTime.ParseExact(dob, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-                DateTime today = DateTime.Now;
-                DateTime validDate = new DateTime(today.Year - 18, today.Month, today.Day);
-                TimeSpan validAge = today.Subtract(validDate);
-                TimeSpan actualAge = today.Subtract(dt);
-                TimeSpan.Compare(validAge, actualAge);
-                return true;
+                var dt =
+                    DateTime.ParseExact(dob, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                var today = DateTime.Now;
+                var age = today.Year - dt.Year;
+                if (age > 18)
+                {
+                    return true;
+                }
             }
             return false;
-
         }
     }
 }
-
