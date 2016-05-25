@@ -80,7 +80,6 @@
     <Compile Include="Models\Operations\ICanSendCash.cs" />
     <Compile Include="Models\Operations\Income.cs" />
     <Compile Include="Models\Operations\Withdraw.cs" />
-    <Compile Include="Models\Validators\DateOfCompanyRegistrationValidator.cs" />
     <Compile Include="Models\Validators\NipValidator.cs" />
     <Compile Include="PersonalAccountsManager.xaml.cs">
       <DependentUpon>PersonalAccountsManager.xaml</DependentUpon>
@@ -169,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

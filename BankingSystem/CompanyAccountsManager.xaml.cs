@@ -205,7 +205,7 @@ namespace BankingSystem
                 }
                 catch
                 {
-                    MessageBox.Show("Brak klientów w bazie");
+                    MessageBox.Show("Nie można wykonać operacji");
                 }
                 using (Stream s = File.Create(filePath))
                 {

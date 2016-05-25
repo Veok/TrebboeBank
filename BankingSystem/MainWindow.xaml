@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankingSystem"
         mc:Ignorable="d"
-        Title="Bank Manager" Height="350" Width="525">
-    <Grid Background="Azure">
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button x:Name="PersonalManager" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Content="Konta Osobiste" Height="48" Width="185" Click="PersonalManager_Click" />
-            <Button x:Name="CompanyManager" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Content="Konta Firmowe" Height="48" Width="185" Margin="5"
-                    Click="CompanyManager_Click" />
-        </StackPanel>
+        Title="Bank Manager" Height="350" Width="300">
+    <Grid Background="WhiteSmoke">
+        <Button x:Name="PersonalManager" Background="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+        		Content="Konta Osobiste" Height="48" Width="184" Click="PersonalManager_Click" Margin="0,80,0,0" />
+        <Button x:Name="CompanyManager" HorizontalAlignment="Center" VerticalAlignment="Center"
+            	Content="Konta Firmowe"  Background="WhiteSmoke" Height="48" Width="185" 
+            	Click="CompanyManager_Click" Margin="0,180,0,0"/>
+        <Image x:Name="logo" Source="images/Logo3.png" HorizontalAlignment="Center" Height="120" 
+               Margin="0,25,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

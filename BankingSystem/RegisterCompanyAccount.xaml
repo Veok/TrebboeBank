@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankingSystem"
 
-        Title="Konto Biznesowe" Height="532" Width="432"
-        MinHeight="532"
+        Title="Konto Biznesowe" Height="402" Width="432"
+        MinHeight="402"
         MinWidth="432"
-        MaxHeight="532"
+        MaxHeight="402"
         MaxWidth="432">
     <Grid>
 
 
-        <StackPanel Margin="10,0,0,0" HorizontalAlignment="Left" Width="404" Height="407" VerticalAlignment="Top">
+        <StackPanel Margin="10,0,0,0" HorizontalAlignment="Left" Width="404" Height="294" VerticalAlignment="Top">
             <TextBlock Name="NameBlock" Text="Nazwa Firmy" />
             <TextBox Name="NameBox" />
 
@@ -33,7 +33,7 @@
             <TextBlock Name="ZipCodeBlock" Text="Kod pocztowy" />
             <TextBox Name="ZipCodeBox" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,407,0,0" Height="84" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal" Margin="0,299,0,-12" Height="84" VerticalAlignment="Top">
             <Button Name="Create" Content="Stwórz Konto" Margin="40,0,0,53" HorizontalAlignment="Center" Height="30"
                     Width="110" Click="Create_Click" />
             <Button x:Name="Back" Content="Anuluj" Margin="5,0,0,53" Width="110" Height="30" Click="Back_Click" />
