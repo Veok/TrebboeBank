@@ -10,7 +10,7 @@ namespace TrebboeBank.Models.Validators
             if (!string.IsNullOrEmpty(dob))
             {
                 var dt =
-                    DateTime.ParseExact(dob, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+                    DateTime.Parse(dob);
                 var today = DateTime.Now;
                 var age = today.Year - dt.Year;
                 if (age > 18)
