@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Windows;
-using System.Xml.Serialization;
 using TrebboeBank.Models.Accounts;
+using TrebboeBank.Models.Data;
 using TrebboeBank.Models.Validators;
 
 namespace TrebboeBank
@@ -77,37 +76,16 @@ namespace TrebboeBank
                 var account = new BankAccount();
                 var companyAccount = new CompanyAccount(companyName, nip, email, zipCode, country,
                     phone, city, street, account)
-                {BankAccount = {Balance = 0.0}};
+                { BankAccount = { Balance = 0.0 } };
 
                 var filePath = Environment.CurrentDirectory + @"\" + "Company_Accounts.xml";
-                ListToXmlFile(companyAccount, filePath);
+                var listToXml = new ListToXml();
+                listToXml.CompanyAccounts(companyAccount, filePath);
                 Close();
             }
         }
 
-        private static void ListToXmlFile(CompanyAccount obj, string filePath)
-        {
-            var xmlser = new XmlSerializer(typeof (ObservableCollection<CompanyAccount>));
-            ObservableCollection<CompanyAccount> list;
-            try
-            {
-                using (Stream s = File.OpenRead(filePath))
-                {
-                    list = xmlser.Deserialize(s) as ObservableCollection<CompanyAccount>;
-                }
-            }
-            catch
-            {
-                list = new ObservableCollection<CompanyAccount>();
-            }
-            if (list == null) return;
-            {
-                list.Add(obj);
-                using (Stream s = File.OpenWrite(filePath))
-                {
-                    xmlser.Serialize(s, list);
-                }
-            }
-        }
+
+
     }
 }

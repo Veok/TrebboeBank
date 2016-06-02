@@ -6,6 +6,7 @@ namespace TrebboeBank.Models.Validators
     {
         public bool ValidatePhoneNumber(string phone)
         {
+            
             return Regex.Match(phone, @"^(\+[0-9]{9})$").Success;
         }
     }
