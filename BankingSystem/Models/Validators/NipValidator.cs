@@ -5,18 +5,15 @@
         public bool ValidateNip(string nip)
         {
             int[] weights = {6, 5, 7, 2, 3, 4, 5, 6, 7};
-            var result = false;
-            if (nip.Length == 10)
+            if (nip.Length != 10) return false;
+            var controlSum = CalculateControlSum(nip, weights);
+            var controlNum = controlSum%11;
+            if (controlNum == 10)
             {
-                var controlSum = CalculateControlSum(nip, weights);
-                var controlNum = controlSum%11;
-                if (controlNum == 10)
-                {
-                    controlNum = 0;
-                }
-                var lastDigit = int.Parse(nip[nip.Length - 1].ToString());
-                result = controlNum == lastDigit;
+                controlNum = 0;
             }
+            var lastDigit = int.Parse(nip[nip.Length - 1].ToString());
+            var result = controlNum == lastDigit;
             return result;
         }
 

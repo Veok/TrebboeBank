@@ -9,6 +9,10 @@ namespace TrebboeBank
 {
     public partial class RegisterCompanyAccount
     {
+
+        /** Numer telefonu powinien się zaczynać od "+"
+         * By stworzyć konto należy podać prawdziwy numer NIP
+         * Email powinien zawierać "@" */
         public RegisterCompanyAccount()
         {
             InitializeComponent();

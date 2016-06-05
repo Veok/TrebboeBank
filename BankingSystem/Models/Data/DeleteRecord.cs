@@ -19,7 +19,6 @@ namespace TrebboeBank.Models.Data
             try
             {
 
-                /* Odczytywanie oraz deserializacja pliku XML */
                 using (Stream s = File.OpenRead(filePath))
                 {
                     list = xmlser.Deserialize(s) as ObservableCollection<PersonalAccount>;
@@ -33,7 +32,6 @@ namespace TrebboeBank.Models.Data
             {
                 try
                 {
-                    /* Usunięcie wybranego rekordu*/
                     list.RemoveAt(obj);
                 }
                 catch
@@ -42,7 +40,6 @@ namespace TrebboeBank.Models.Data
                 }
                 using (Stream s = File.Create(filePath))
                 {
-                    /* Serializacja listy do pliku*/
                     xmlser.Serialize(s, list);
                 }
             }
@@ -55,7 +52,6 @@ namespace TrebboeBank.Models.Data
             ObservableCollection<CompanyAccount> list;
             try
             {
-                /* Odczytywanie oraz deserializacja pliku XML */
 
                 using (Stream s = File.OpenRead(filePath))
                 {
@@ -70,7 +66,6 @@ namespace TrebboeBank.Models.Data
             {
                 try
                 {
-                    /* Usunięcie wybranego rekordu*/
                     list.RemoveAt(obj);
                 }
                 catch
@@ -79,7 +74,6 @@ namespace TrebboeBank.Models.Data
                 }
                 using (Stream s = File.Create(filePath))
                 {
-                    /* Serializacja listy do pliku*/
                     xmlser.Serialize(s, list);
                 }
             }

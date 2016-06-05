@@ -18,7 +18,6 @@ namespace TrebboeBank.Models.Data
                 foreach (var item in tmpList)
                 {
 
-                    /* Wypisanie rekordów do listy */
                     tmp.PersonalAccounts.Add(item);
                 }
             }
@@ -33,7 +32,6 @@ namespace TrebboeBank.Models.Data
                     (ObservableCollection<CompanyAccount>)deserializer.Deserialize(sr);
                 foreach (var item in tmpList)
                 {
-                    /* Wypisanie rekordów do listy */
 
                     tmp.CompanyAccounts.Add(item);
                 }

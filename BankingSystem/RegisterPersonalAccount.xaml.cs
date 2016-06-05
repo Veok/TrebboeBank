@@ -9,6 +9,11 @@ namespace TrebboeBank
 {
     public partial class RegisterPersonalAccount
     {
+
+        /** Numer telofonu powinien się zaczynać od "+"
+         * By stworzyć konto trzeba podać prawdziwy numer pesel oraz date urodzenia powyżej 18 roku życia
+         * Email powinien zawierać "@" */
+
         public RegisterPersonalAccount()
         {
             InitializeComponent();

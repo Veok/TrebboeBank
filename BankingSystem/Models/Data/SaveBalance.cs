@@ -27,9 +27,7 @@ namespace TrebboeBank.Models.Data
             }
             if (list == null) return;
             {
-                /* Usuniecie wybranego starego obiektu, któremu chcemy zmienić balans konta */
                 list.RemoveAt(obj);
-                /* Ponowne dodanie obiektu, wraz ze zmienionym balansem */
                 list.Insert(obj, personalAccount);
                 using (Stream s = File.Create(filepath))
                 {
@@ -58,10 +56,8 @@ namespace TrebboeBank.Models.Data
             }
             if (list == null) return;
             {
-                /* Usuniecie wybranego starego obiektu, któremu chcemy zmienić balans konta */
 
                 list.RemoveAt(obj);
-                /* Ponowne dodanie obiektu, wraz ze zmienionym balansem */
 
                 list.Insert(obj, companyAccount);
                 using (Stream s = File.Create(filepath))

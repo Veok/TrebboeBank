@@ -5,7 +5,7 @@ namespace TrebboeBank.Models.Validators
 {
     internal class PeselValidator
     {
-        private static readonly int[] Wagi = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
+        private static readonly int[] Waig = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
 
         public bool ValidatePesel(string pesel)
         {
@@ -30,9 +30,9 @@ namespace TrebboeBank.Models.Validators
 
         private static string CountSum(string pesel)
         {
-            var sum = Wagi.Select((t, i) => t*int.Parse(pesel[i].ToString())).Sum();
-            var reszta = sum%10;
-            return reszta == 0 ? reszta.ToString() : (10 - reszta).ToString();
+            var sum = Waig.Select((t, i) => t * int.Parse(pesel[i].ToString())).Sum();
+            var rest = sum % 10;
+            return rest == 0 ? rest.ToString() : (10 - rest).ToString();
         }
     }
 }
