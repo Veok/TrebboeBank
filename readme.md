@@ -11,13 +11,13 @@
 - email
 - wypełnienie pól (każde pole w formularzu musi zostać wypełnione)
 
-Dla rejestracji konta firmowego/biznesowego, sprawdzana jest:
+  Dla rejestracji konta firmowego/biznesowego, sprawdzana jest:
 
 - poprawność nazwy firmy (identyczne założenie jak przy imieniu i nazwisku)
 - popranowść numeru Nip (zaimplementowany validator)
 - email, nr telefonu oraz wypełnienie pól ma założenia identyczne jak w przypadku rejestracji kont osobistych
 
-Dodatkowo dla każdego konta jest generowany poprawny numer rachunku bankowego, oraz id konta.
+  Dodatkowo dla każdego konta jest generowany poprawny numer rachunku bankowego, oraz id konta.
 
 3. INTERFEJS - jest nim klasa "ICanSendCash" w Models->Operations. Klasami implementującymi interfejs są "Income" oraz "Withdraw". Odpowiednio w klasie "Income" sprawdzane jest czy zadawana kwota nie jest ujemna, zaś w klasie "Withdraw" czy kwota którą chcemy wypłacić nie przekracza środków na koncie klienta. Jeśli warunki są spełnienie, wybrana operacja zostanie dokonana. 
 
