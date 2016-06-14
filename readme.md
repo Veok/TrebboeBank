@@ -1,6 +1,6 @@
 <b>TREBBOE BANK - Projekt zaliczeniowy na Akademie C# - Paweł Lelental </b>
 
-1.Projektem jest aplikacja w WPF symulująca program który jest używany przez pracownika banku. Użytkownik może stworzyć nowe konto osobiste bądź firmowe dla potencjalnego klienta. Pracownik ma dostęp do listy kont w bazie (ObservableCollection zapisane w XML). Może on wpłacić środki na konto klienta, wypłacić oraz ma możliwość usunięcia klienta z bazy.
+1. Projektem jest aplikacja w WPF symulująca program który jest używany przez pracownika banku. Użytkownik może stworzyć nowe konto osobiste bądź firmowe dla potencjalnego klienta. Pracownik ma dostęp do listy kont w bazie (ObservableCollection zapisane w XML). Może on wpłacić środki na konto klienta, wypłacić oraz ma możliwość usunięcia klienta z bazy.
 
 2. Przy rejestracji osoby fizycznej, program sprawdza:
 
