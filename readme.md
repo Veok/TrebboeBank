@@ -20,15 +20,15 @@
 
   Dodatkowo dla każdego konta jest generowany poprawny numer rachunku bankowego, oraz id konta.
 
-3. <b>Interfejs</b> - jest nim klasa "ICanSendCash" w Models->Operations. Klasami implementującymi interfejs są "Income" oraz "Withdraw". Odpowiednio w klasie "Income" sprawdzane jest czy zadawana kwota nie jest ujemna, zaś w klasie "Withdraw" czy kwota którą chcemy wypłacić nie przekracza środków na koncie klienta. Jeśli warunki są spełnienie, wybrana operacja zostanie dokonana. 
+3. Interfejs - jest nim klasa "ICanSendCash" w Models->Operations. Klasami implementującymi interfejs są "Income" oraz "Withdraw". Odpowiednio w klasie "Income" sprawdzane jest czy zadawana kwota nie jest ujemna, zaś w klasie "Withdraw" czy kwota którą chcemy wypłacić nie przekracza środków na koncie klienta. Jeśli warunki są spełnienie, wybrana operacja zostanie dokonana. 
 
-4. <b>Enum</b> - klasa "Gender" w Models->Accounts. Definiuje on płeć klienta. Zostosowany w klasie "PersonalAccounts"
+4. Enum - klasa "Gender" w Models->Accounts. Definiuje on płeć klienta. Zostosowany w klasie "PersonalAccounts"
 
-5. <b>Dziedziczenie</b> - Klasy "PersonalAccounts" oraz "CompanyAccounts" dziedziczą pola klasy "Customers", w Models->Accounts.
+5. Dziedziczenie - Klasy "PersonalAccounts" oraz "CompanyAccounts" dziedziczą pola klasy "Customers", w Models->Accounts.
 
-6. <b>Kolekcje</b> - zostosowana została metoda ObservableCollection. Dodatkowo lista zapisywana jest do pliku XML. 
+6. Kolekcje - zostosowana została metoda ObservableCollection. Dodatkowo lista zapisywana jest do pliku XML. 
 
-7. <b>Wyjątki</b> - zostały użyte m.in przy serializacji i deserializcji plików XML z listą klientów, w Models->Data. 
+7. Wyjątki - zostały użyte m.in przy serializacji i deserializcji plików XML z listą klientów, w Models->Data. 
 
 
 
